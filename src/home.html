@@ -34,21 +34,17 @@
 
     <!--Next section is dedicated to videos-->
     <section>
-        <video src = "Videos/bali.mp4" width = "240" autoplay loop muted>
+        <video src = "Videos/bali.mp4" width = "240" controls muted>
             <track kind="captions" label="English captions" src = "captions/bali_caption.txt" srclang="en" default>
         </video>
-        <video width = "240"  autoplay loop muted>
+        <video width = "240"  controls muted>
             <source src = "Videos/japan.mp4" type = "video/mp4">
             <track src = "captions/japan_caption.txt" label="English" kind="captions" srclang="en" default>
         </video>
-        <video src = "Videos/switzerland.mp4" width = "240" autoplay loop muted aria-describedby = "transcript">
+        <video src = "Videos/switzerland.mp4" width = "240" controls muted>
             <source  type = "video/mp4">
             <track label="English" kind="captions" src = "captions/switzerland_caption.txt" srclang="en" default>
         </video>
-        <div id = "transcript">
-            <strong>Transcript</strong>
-            Goes something like this
-        </div>
     </section>
     <!--Description for the videos-->
     <section>
