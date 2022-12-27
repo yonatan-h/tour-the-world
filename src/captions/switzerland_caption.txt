@@ -1,0 +1,9 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:06.000
+Cloud fair on the green hill in Switzerland
+
+2
+00:00:06.000 --> 00:00:13.000
+Snowy mountain in Switzerland, aerial view

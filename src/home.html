@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <!-- We're making the nav-bar here -->
+    <nav>
+        <a href ="home.html"> Home </a>
+        <a href = "explore.html">Explore</a>
+        <a href = "food_and_drinks.html"> Food and drinks</a>
+        <a href= "accommodations.html">Accommodations</a>
+        <a href = "contact.html"> Contact</a>
+        <a href= "about_us.html">About us</a>
+    </nav>
+    <header>
+       <h1>Explore with us!</h1>
+    </header>
+    <!--We have a slideshow class here with buttons and images-->
+
+    <div>
+        <button> < </button>
+        <img src="images/oceans.jpg" width = 100 alt = " A picture of an ocean">
+        <img src = "images/tokyo.jpg" width = 100 alt = "The night city of Japan">
+        <img src = "images/kuta-beach-bali.jpg" width = 100 alt = "The sunny beach kuta in bali" >
+        <button>></button>
+    </div>
+    <div>
+        <p>Not sure where to travel? we got you! With out website you can explore exotic places digitally and get all the information ranging from pricing to meals about them, so pack and travel!</p>
+    </div>
+
+    <!--Next section is dedicated to videos-->
+    <section>
+        <video src = "Videos/bali.mp4" width = "240" autoplay loop muted>
+            <track kind="captions" label="English captions" src = "captions/bali_caption.txt" srclang="en" default>
+        </video>
+        <video width = "240"  autoplay loop muted>
+            <source src = "Videos/japan.mp4" type = "video/mp4">
+            <track src = "captions/japan_caption.txt" label="English" kind="captions" srclang="en" default>
+        </video>
+        <video src = "Videos/switzerland.mp4" width = "240" autoplay loop muted aria-describedby = "transcript">
+            <source  type = "video/mp4">
+            <track label="English" kind="captions" src = "captions/switzerland_caption.txt" srclang="en" default>
+        </video>
+        <div id = "transcript">
+            <strong>Transcript</strong>
+            Goes something like this
+        </div>
+    </section>
+    <!--Description for the videos-->
+    <section>
+        <p>Take in the beautiful view of Bali!!</p>
+        <p> Enjoy the culture rich and beautiful Japan!</p>
+        <p>Explore the cold home of the vikings. The birthplace of valhalla and all other nord mythologies</p>
+
+    </section><hr>
+    <footer>
+        <a href = "explore.html">our services</a> 
+        <section ="social-links">
+            <p>social-links</p>
+            <a href = "facebook.com"><img src = "images/facebook.jpg" alt = "facebook logo" width ="25"></a>
+            <a href = "instagram.com"><img src = "images/instagram.jpg" alt = "instagram logo" width="25"></a> 
+            <a href = "linkedin.com"><img src = "images/linkedin.jpg" alt = "linkedin logo" width = "25"></a>
+            <p> More info: </p>
+            <a href = "contact.html"> Contact</a>
+            <a href = "about_us.html"> About us</a>
+        </section>
+    </footer>
+</body>
+</html>

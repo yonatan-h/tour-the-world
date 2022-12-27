@@ -1,0 +1,13 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+Sekumpul waterfalls
+
+2
+00:00:05.000 --> 00:00:08.000
+Handara Golf & Resort
+
+3
+00:00:08.000 --> 00:00:11.000
+Green field

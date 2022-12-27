@@ -1,0 +1,9 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:08.000
+Mount Fuji, Mountain in Japan at winter season
+
+2
+00:00:08.000 --> 00:00:14.000
+Matsuyama Castle in Japan at sun rising time
