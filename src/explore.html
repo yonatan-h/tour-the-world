@@ -7,7 +7,6 @@
     <title>Explore</title>
 </head>
 <body>
-     <!-- We're making the nav-bar here -->
      <nav>
         <a href ="home.html"> Home </a>
         <a href = "explore.html">Explore</a>
@@ -71,9 +70,27 @@
     </section>
     <p>Hear the vibrance of the world, ranging from musics to the sound of nature, our best picks for you!</p>
     <section>
-        <audio src="audios/birds.mp3" controls></audio>
-        <audio src="audios/rainforest.mp3" controls></audio>
-        <audio src = "audios/waves.mp3" controls></audio>
+        <div>
+            <audio src="audios/birds.mp3" controls aria-describedby="description-birds"></audio>
+            <div id ="description-birds">
+                <button> Description</button>
+                <p>Sounds of Birds chirping in a quiet area</p>
+            </div>
+        </div>
+        <div>
+            <audio src="audios/rainforest.mp3" controls aria-describedby="description-rainforest"></audio>
+            <div id="description-rainforest">
+                <button>Description</button>
+                <p>A sound of rain is heard from a rainforest and sounds of some animals in the rain forest.</p>
+            </div>
+        </div>
+        <div>
+            <audio src = "audios/waves.mp3" controls aria-describedby="description-waves"></audio>
+            <div id = "description-waves">
+                <button>Description</button>
+                <p>Waves of the ocean are heard crashing into one another.</p>
+            </div>
+        </div>
     </section>
 </body>
 </html>
