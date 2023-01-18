@@ -1,4 +1,4 @@
-Title: tour-the-world (Gedion Ezra's Project)
+Title: tour-the-world (Gedion Ezra's Project).
 
 Group members
 
