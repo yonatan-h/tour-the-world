@@ -24,24 +24,6 @@
     </div>
     <script>
       loadComments();
-
-      function amLoggedIn() {
-        return localStorage.getItem("jwt-token") !== null;
-      }
-
-      function getCurrentUserId() {
-        const userId = localStorage.getItem("user-id");
-        return +userId;
-      }
-
-      async function getUserName(userId) {
-        const result = await fetch(`http://localhost:3000/users/${userId}`);
-        const data = await result.json();
-        console.log(data);
-        const userName = data.name;
-        return userName;
-      }
-
       async function loadComments() {
         const countryDivs = [...document.querySelectorAll(".country-js")];
         for (const countryDiv of countryDivs) {
@@ -50,29 +32,21 @@
 
           const countryId = countryDiv.getAttribute("id");
           const plainComments = await getCountryComments(countryId);
-          console.log(plainComments);
           const comments = await mapToNormalComments(plainComments);
 
           for (const comment of comments) {
-            const isCurrentUser = comment.userId === getCurrentUserId();
+            const isCurrentUser = comment.isCurrentUser;
 
             let commentDiv;
-            if (isCurrentUser && amLoggedIn()) {
+            if (isCurrentUser) {
               commentDiv = createCrudCommentDiv(comment, countryId);
             } else {
               commentDiv = createReadOnlyCommentDiv(comment);
             }
             commentsDiv.appendChild(commentDiv);
           }
-          if (amLoggedIn()) {
-            const emptyCommentDiv = await createEmptyCommentDiv(countryId);
-            commentsDiv.appendChild(emptyCommentDiv);
-          } else {
-            const loginSuggestP = document.createElement("p");
-            loginSuggestP.textContent =
-              "login to write, edit, and delte your comments";
-            commentsDiv.appendChild(loginSuggestP);
-          }
+          const emptyCommentDiv = await createEmptyCommentDiv(countryId);
+          commentsDiv.appendChild(emptyCommentDiv);
         }
       }
 
@@ -80,20 +54,30 @@
         const normalComments = [];
         for (const plainComment of plainComments) {
           const content = plainComment.content;
-          const userId = plainComment.userid;
+          const userId = plainComment.userId;
           const date = plainComment.date;
 
           const userName = await getUserName(userId);
+          const isCurrentUser = userId === getCurrentUserId();
 
           const normalComment = {
             userName,
             content,
+            isCurrentUser,
             date,
             userId,
           };
           normalComments.push(normalComment);
         }
         return normalComments;
+      }
+
+      function getCurrentUserId() {
+        return 1;
+      }
+
+      function getUserName(userId) {
+        return "abebe";
       }
 
       function createReadOnlyCommentDiv(comment) {
@@ -207,3 +191,4 @@
     </script>
   </body>
 </html>
+
