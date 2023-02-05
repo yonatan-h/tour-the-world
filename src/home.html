@@ -1,69 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="bootstrap/js/bootstrap.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?Montserrat|Ubuntu"
+    />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
     <title>Home</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- We're making the nav-bar here -->
-    <nav>
-        <a href ="home.html"> Home </a>
-        <a href = "explore.html">Explore</a>
-        <a href = "food_and_drinks.html"> Food and drinks</a>
-        <a href= "accommodations.html">Accommodations</a>
-        <a href = "contact.html"> Contact</a>
-        <a href= "about_us.html">About us</a>
+    <nav
+      class="navbar d-flex justify-content-center navbar-expand-lg navbar-dark bg-dark"
+    >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarToggledDiv"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarToggledDiv">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="explore.html">Explore</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="food_and_drinks.html">Food and Drinks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="accommodations.html">Accommodations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about_us.html">About</a>
+          </li>
+        </ul>
+      </div>
     </nav>
     <header>
-       <h1>Explore with us!</h1>
+      <h1>Explore with us!</h1>
     </header>
     <!--We have a slideshow class here with buttons and images-->
-
-    <div>
-        <button> < </button>
-        <img src="images/oceans.jpg" width = 100 alt = " A picture of an ocean">
-        <img src = "images/tokyo.jpg" width = 100 alt = "The night city of Japan">
-        <img src = "images/kuta-beach-bali.jpg" width = 100 alt = "The sunny beach kuta in bali" >
-        <button>></button>
+    <div
+      id="albumLike"
+      class="carousel slide w-75 mx-auto"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner rounded-5">
+        <div class="carousel-item active">
+          <img
+            src="images/kuta-beach-bali.jpg"
+            class="d-block w-100"
+            alt=" A picture of an ocean"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="images/tokyo.jpg"
+            class="d-block w-100"
+            alt=" A picture of an ocean"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="images/Uluwatu.jpg"
+            class="d-block w-100"
+            alt=" A picture of a mountain"
+          />
+        </div>
+      </div>
+      <a
+        class="carousel-control-prev"
+        href="#albumLike"
+        role="button"
+        data-slide="prev"
+      >
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#albumLike"
+        role="button"
+        data-slide="next"
+      >
+        <span class="carousel-control-next-icon"></span>
+      </a>
     </div>
-    <div>
-        <p>Not sure where to travel? we got you! With out website you can explore exotic places digitally and get all the information ranging from pricing to meals about them, so pack and travel!</p>
+    <div class="d-flex justify-content-center">
+      <p class="my-5 text-white">
+        Not sure where to travel? we got you! With out website you can explore
+        exotic places digitally and get all the information ranging from pricing
+        to meals about them, so pack and travel!
+      </p>
     </div>
 
     <!--Next section is dedicated to videos-->
-    <section>
-        <video src = "Videos/bali.mp4" width = "240" controls muted>
-            <track kind="captions" label="English captions" src = "captions/bali_caption.txt" srclang="en" default>
+    <div class="row w-100 mx-auto">
+      <section class="col-lg-4 col-sm-12">
+        <video src="Videos/bali.mp4" controls muted class="w-75 rounded-5">
+          <track
+            kind="captions"
+            label="English captions"
+            src="captions/bali_caption.txt"
+            srclang="en"
+            default
+          />
         </video>
-        <video width = "240"  controls muted>
-            <source src = "Videos/japan.mp4" type = "video/mp4">
-            <track src = "captions/japan_caption.txt" label="English" kind="captions" srclang="en" default>
-        </video>
-        <video src = "Videos/switzerland.mp4" width = "240" controls muted>
-            <source  type = "video/mp4">
-            <track label="English" kind="captions" src = "captions/switzerland_caption.txt" srclang="en" default>
-        </video>
-    </section>
-    <!--Description for the videos-->
-    <section>
         <p>Take in the beautiful view of Bali!!</p>
-        <p> Enjoy the culture rich and beautiful Japan!</p>
-        <p>Explore the cold home of the vikings. The birthplace of valhalla and all other nord mythologies</p>
-
-    </section><hr>
-    <footer>
-        <a href = "explore.html">our services</a> 
-        <section>
-            <p>social-links</p>
-            <a href = "facebook.com"><img src = "images/facebook.jpg" alt = "facebook logo" width ="25"></a>
-            <a href = "instagram.com"><img src = "images/instagram.jpg" alt = "instagram logo" width="25"></a> 
-            <a href = "linkedin.com"><img src = "images/linkedin.jpg" alt = "linkedin logo" width = "25"></a>
-            <p> More info: </p>
-            <a href = "contact.html"> Contact</a>
-            <a href = "about_us.html"> About us</a>
-        </section>
+      </section>
+      <section class="col-lg-4 col-sm-12">
+        <video src="Videos/japan.mp4" controls muted class="w-75 rounded-5">
+          <track
+            src="captions/japan_caption.txt"
+            label="English"
+            kind="captions"
+            srclang="en"
+            default
+          />
+        </video>
+        <p class="videoHolder__section__text">
+          Enjoy the culture rich and beautiful Japan!
+        </p>
+      </section>
+      <section class="col-lg-4 col-sm-12">
+        <video
+          src="Videos/switzerland.mp4"
+          controls
+          muted
+          class="w-75 rounded-5"
+        >
+          <track
+            label="English"
+            kind="captions"
+            src="captions/switzerland_caption.txt"
+            srclang="en"
+            default
+          />
+        </video>
+        <p class="w-75">
+          Explore the cold home of the vikings. The birthplace of valhalla and
+          all other nord mythologies
+        </p>
+      </section>
+    </div>
+    <!--Description for the videos-->
+    <footer class="footer d-flex justify-content-between bg-dark">
+      <section class="footer__content">
+        <a class="text-decoration-none text-white" href="explore.html"
+          >our services</a
+        >
+      </section>
+      <section class="footer__content">
+        <p class="footer__content__text">social-links</p>
+        <a class="footer__content__link" href="facebook.com"
+          ><img src="images/facebook.jpg" alt="facebook logo" width="25"
+        /></a>
+        <a class="footer__content__link" href="instagram.com"
+          ><img src="images/instagram.jpg" alt="instagram logo" width="25"
+        /></a>
+        <a href="linkedin.com"
+          ><img src="images/linkedin.jpg" alt="linkedin logo" width="25"
+        /></a>
+      </section>
+      <section class="footer__content">
+        <p class="footer__content__text">More info:</p>
+        <a class="text-decoration-none text-white" href="contact.html">
+          Contact</a
+        >
+        <a class="text-decoration-none text-white" href="about_us.html">
+          About us</a
+        >
+      </section>
     </footer>
-</body>
+  </body>
 </html>
