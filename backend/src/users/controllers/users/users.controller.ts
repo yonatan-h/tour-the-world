@@ -28,7 +28,6 @@ export class UsersController {
         return this.userHandler.showSpecificUser(id);
 
     }
-
     @Delete('/:id')
     deleteUser(@Param() id: number){
         return this.userHandler.deleteUser(id);

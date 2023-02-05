@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour-the-world |Login</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: column;
+            margin: 5% 25%;
+        }
+        form {
+          width:50%;
+          padding: 5% ;
+          border: 1px solid #ccc;
+          border-radius: 10px;
+        }
+    
+        input,
+        label {
+          display: block;
+          margin-bottom: 3%;
+          font-size: 18px;
+        }
+        input[type="email"],
+        input[type="password"] {
+          width: 100%;
+          padding: 3%;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+    
+        input[type="submit"] {
+          margin-left: 25%;
+          width: 50%;
+          padding: 3%;
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+    
+        input[type="submit"]:hover {
+          background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="authenticateUserForm">
+            <h1>Login </h1>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="submit" value="Login">
+        </form>
+        <span>Don't have an account? <a href="create_account.html">create one</a></span>
+
+        <script>
+            const form = document.getElementById('authenticateUserForm');
+            form.onsubmit = authenticateUser;
+
+            async function authenticateUser(event) {
+                event.preventDefault();
+
+                const formData = new FormData(form)
+                const toBeJson = {}
+
+                for (const keyValuePair of formData) {
+                    toBeJson[keyValuePair[0]] = keyValuePair[1];
+                }
+                const json = JSON.stringify(toBeJson);
+
+                const result = await fetch("http://localhost:3000/auth/login", {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: json,
+                });
+
+                const data = await result.json();
+                const jwtToken = data["access_token"];
+                console.log(jwtToken);
+
+                localStorage.setItem("jwt-token", jwtToken);
+                accessProtectedRoute();
+                // window.location = "home.html";
+            }
+
+            async function accessProtectedRoute() {
+                const jwtToken = localStorage.getItem("jwt-token");
+                const authorizationHeader = "Bearer " + jwtToken;
+                const result = await fetch("http://localhost:3000/profile", {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: authorizationHeader,
+                    },
+                });
+                
+                const data = await result.json();
+                console.log(data);
+
+                if (data["message"] != "Unauthorized"){
+                    const emailValue = document.getElementById('email').value;
+                    const jsonEmail = {email: emailValue};
+                    const transformedForm = JSON.stringify(jsonEmail);
+
+                    const emailVal = await fetch("http://localhost:3000/auth/emails", {
+                        method: "POST",
+                        headers: {"Content-Type": "application/json"},
+                        body: transformedForm,
+                    });
+
+                    const something = await emailVal.json();
+
+                    localStorage.setItem("user-name", something.name);
+                    localStorage.setItem("user-id", something.id);
+
+                    console.log(localStorage.getItem("user-name"));
+                    window.location = "home.html";
+                }else{
+                    alert("Wrong email or password");
+                }
+            }
+
+        </script>
+    </div>
+</body>
+</html>

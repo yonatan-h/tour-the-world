@@ -1,4 +1,4 @@
-import { Body, Injectable } from '@nestjs/common';
+import { Body, Injectable, Param } from '@nestjs/common';
 import { InjectRepository} from '@nestjs/typeorm';
 import { Users } from './entity/users.entity';
 import { Repository } from 'typeorm';
@@ -22,7 +22,7 @@ export class UsersService {
     updateUser(@Body() username: UpdateUser, id: number){
         return this.userRepository.update(id, username);
     }
-    showSpecificUser(id: number){
+    showSpecificUser(@Param()id: number){
         return this.userRepository.findOne({ where: { id } });
     }
     showSpecificUserByEmail(email: string){

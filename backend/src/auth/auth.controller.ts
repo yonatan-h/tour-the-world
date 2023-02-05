@@ -5,7 +5,12 @@ import { AuthService } from './auth.service';
 
 @Controller('auth')
 export class AuthController   {
-    constructor(private authService: AuthService){}
+    constructor(private userService: UsersService, private authService: AuthService){}
+    @Post('emails')
+    getEmails(@Body() loginDto: any){
+        const user = this.userService.showSpecificUserByEmail(loginDto.email)
+        return user
+    }
     @UseGuards(AuthGuard('local'))
     @Post('login')
     async login(@Request() req: any){
