@@ -1,95 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?Montserrat|Ubuntu"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+
     <title>Food and Drinks</title>
-</head>
-<body>
-    <nav>
-        <a href ="home.html"> Home </a>
-        <a href = "explore.html">Explore</a>
-        <a href = "food_and_drinks.html"> Food and drinks</a>
-        <a href= "accommodations.html">Accommodations</a>
-        <a href = "contact.html"> Contact</a>
-        <a href= "about_us.html">About us</a>
+  </head>
+  <body>
+    <nav
+      class="navbar d-flex justify-content-center navbar-expand-lg navbar-dark bg-dark"
+    >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarToggledDiv"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarToggledDiv">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="explore.html">Explore</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="food_and_drinks.html">Food and Drinks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="accommodations.html">Accommodations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about_us.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link btn btn-primary"
+              role="button"
+              href="create_account.html"
+              >Home</a
+            >
+          </li>
+        </ul>
+      </div>
     </nav>
     <h1>Food and Drinks</h1>
     <label for="food-search">
-        <img src="images/search.jpg" alt ="search icon" width="10">
+      <img src="images/search.jpg" alt="search icon" width="10" />
     </label>
-    <input placeholder="What countries food would you like to see" id="food-search">
+    <input
+      placeholder="What countries food would you like to see"
+      id="food-search"
+    />
     <button>search</button>
-    <section role ="food information">
-        <ul>
-            <h2>Ethiopia</h2><hr>
-            <li>
-                <p>kitfo</p>
-                <img src = "images/Kitfo.jpg" alt = "An image of kitfo; a traditional food in Ethiopia, made from grounded raw beef meat" width = "200"> 
-                <p>Category: Foods</p>
-            </li>
-            <li>
-                <p>Tej</p>
-                <img src = "images/tej.jpg" alt = "An image of a traditional alcoholic beverage in Ethiopia" width= "200"> 
-                <p> Category: Drinks</p>
-            </li>
-            <li>
-                <p>Doro wot</p>
-                <img src = "images/doro_wot.jpg" alt = "An image of Doro wot, a traditional food in Ethiopia, made from chicken" width = "200">
-                <p>Category: Food</p>
-                
-            </li>
-            <li>
-                <p>Shiro</p>
-                <img src = "images/shiro.jpg" alt = "Shiro; a traditional food in Ethiopia" width = "200">
-                <p>Category: Foods</p>
-            </li>
-        </ul>
-        <ul>
-            <h2>Bali</h2><hr>
-            <li>
-                <p>Babi Guling</p>
-                <img src = "images/babi_guling.jpg" alt = "An image of babi guling; a traditional way of pig roast stuffed with spices found in bali" width="200">
-                <p>Category: Food</p>
-            </li>
-            <li>
-                <p>Es cincau</p>
-                <img src = "images/Es_cincau.jpg" alt = " green grass jelly drink with ice, coconut milk and syrup." width="200">
-                <p>Category: Drinks</p>
-            </li>
-            <li>
-                <p>Babi Guling</p>
-                <img src = "images/ayam_betutu.jpg" alt = "dish of steamed or roasted chicken or duck" width="200">
-                <p>Category: Food</p>
-            </li>
-            <li>
-                <p>Babi Guling</p>
-                <img src = "images/babi_guling.jpg" alt = "An image of babi guling; a traditional way of pig roast stuffed with spices found in bali" width="200">
-                <p>Category: Food</p>
-            </li>
-        </ul>
-        <h2>Brazil</h2><hr>
-            <div>
-                <p>Feijoada</p>
-                <img src = "images/Feijoada.jpg" alt = " A black bean and pork stew that is often served with farofa, toasted cassava " width = "200"> 
-                <p>Category: Foods</p>
-            </div>
-            <div>
-                <p>Caipirnha</p>
-                <img src = "images/caipirnha.jpg" alt = "Brazil's national cocktail, made with cachaça, sugar, and lime" width= "200"> 
-                <p> Category: Drinks</p>
-            </div>
-            <div>
-                <p>Moqueca</p>
-                <img src = "images/Moqueca.jpg" alt = "An image of Moqueca; typically made with shrimp or fish as a base." width = "200">
-                <p>Category: Food</p>
-            </div>
-            <div>
-                <p>Deep fried pastel</p>
-                <img src = "images/Pastel.jpg" alt = "An image of deep fried pastel" width = "200">
-                <p>Category: Foods</p>
-        </div>
+    <section role="food information">
+      <ul>
+        <h2>Ethiopia</h2>
+        <hr />
+        <li>
+          <p>kitfo</p>
+          <img
+            src="images/Kitfo.jpg"
+            alt="An image of kitfo; a traditional food in Ethiopia, made from grounded raw beef meat"
+            width="200"
+          />
+          <p>Category: Foods</p>
+        </li>
+        <li>
+          <p>Tej</p>
+          <img
+            src="images/tej.jpg"
+            alt="An image of a traditional alcoholic beverage in Ethiopia"
+            width="200"
+          />
+          <p>Category: Drinks</p>
+        </li>
+        <li>
+          <p>Doro wot</p>
+          <img
+            src="images/doro_wot.jpg"
+            alt="An image of Doro wot, a traditional food in Ethiopia, made from chicken"
+            width="200"
+          />
+          <p>Category: Food</p>
+        </li>
+        <li>
+          <p>Shiro</p>
+          <img
+            src="images/shiro.jpg"
+            alt="Shiro; a traditional food in Ethiopia"
+            width="200"
+          />
+          <p>Category: Foods</p>
+        </li>
+      </ul>
+      <ul>
+        <h2>Bali</h2>
+        <hr />
+        <li>
+          <p>Babi Guling</p>
+          <img
+            src="images/babi_guling.jpg"
+            alt="An image of babi guling; a traditional way of pig roast stuffed with spices found in bali"
+            width="200"
+          />
+          <p>Category: Food</p>
+        </li>
+        <li>
+          <p>Es cincau</p>
+          <img
+            src="images/Es_cincau.jpg"
+            alt=" green grass jelly drink with ice, coconut milk and syrup."
+            width="200"
+          />
+          <p>Category: Drinks</p>
+        </li>
+        <li>
+          <p>Babi Guling</p>
+          <img
+            src="images/ayam_betutu.jpg"
+            alt="dish of steamed or roasted chicken or duck"
+            width="200"
+          />
+          <p>Category: Food</p>
+        </li>
+        <li>
+          <p>Babi Guling</p>
+          <img
+            src="images/babi_guling.jpg"
+            alt="An image of babi guling; a traditional way of pig roast stuffed with spices found in bali"
+            width="200"
+          />
+          <p>Category: Food</p>
+        </li>
+      </ul>
+      <h2>Brazil</h2>
+      <hr />
+      <div>
+        <p>Feijoada</p>
+        <img
+          src="images/Feijoada.jpg"
+          alt=" A black bean and pork stew that is often served with farofa, toasted cassava "
+          width="200"
+        />
+        <p>Category: Foods</p>
+      </div>
+      <div>
+        <p>Caipirnha</p>
+        <img
+          src="images/caipirnha.jpg"
+          alt="Brazil's national cocktail, made with cachaça, sugar, and lime"
+          width="200"
+        />
+        <p>Category: Drinks</p>
+      </div>
+      <div>
+        <p>Moqueca</p>
+        <img
+          src="images/Moqueca.jpg"
+          alt="An image of Moqueca; typically made with shrimp or fish as a base."
+          width="200"
+        />
+        <p>Category: Food</p>
+      </div>
+      <div>
+        <p>Deep fried pastel</p>
+        <img
+          src="images/Pastel.jpg"
+          alt="An image of deep fried pastel"
+          width="200"
+        />
+        <p>Category: Foods</p>
+      </div>
     </section>
-</body>
+  </body>
 </html>
