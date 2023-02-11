@@ -7,6 +7,8 @@ import { AuthModule } from './auth/auth.module';
 import { ProfileModule } from './profile/profile.module';
 import { Comments } from './comments/entity/comments.entity';
 import { CommentsModule } from './comments/comments.module';
+import { CountryInfoModule } from './country_info/country_info.module';
+import { CountryData } from './country_info/entity/CountryData.entity';
 
 @Module({
   imports: [
@@ -14,17 +16,18 @@ import { CommentsModule } from './comments/comments.module';
     UsersModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
+      host: '127.0.0.1',
       port: 3306,
-      username: 'rooot',
-      password: 'rooot',
-      database: 'users',
-      entities: [Users, Comments],
+      username: 'root',
+      password: 'primequantuM4',
+      database: 'userdb',
+      entities: [Users, Comments, CountryData],
       synchronize: true,
     }),
 
     AuthModule,
     ProfileModule,
+    CountryInfoModule,
   ],
   controllers: [],
   providers: [],
