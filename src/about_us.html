@@ -32,6 +32,24 @@
       crossorigin="anonymous"
     ></script>
     <title>About us</title>
+    <style>
+        /*font-size decreasing cannot be done by bootstrap so I used @media*/
+        @media screen and (max-width: 768px){
+          body{
+           font-size: 0.8rem; 
+          }
+          ul{
+            font-size: 0.6rem;
+          }
+        }
+        /*I couldn't achieve putting a background images using bootstrap so I added a bakground images using bootstrap*/
+        body{
+           background-image: url("images/city.jpg");
+           background-repeat: no-repeat;
+           background-size: cover;
+        }
+        
+      </style>
   </head>
   <body style="font-family: Montserrat Ubuntu">
     <nav
@@ -76,46 +94,34 @@
         </ul>
       </div>
     </nav>
-    <header><h1>About us</h1></header>
-    <section>
-      <img src="images/place.jpg" alt="A lake with surrounding area of green" />
+    <header class ="text-center text-light my-5">
+        <h1 class="header__title">About Us</h1>
+    </header>
+    <section class = "text-center">
+        <img class = "w-50" src = "images/place.jpg" alt ="A lake with surrounding area of green">
     </section>
-    <section>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque
-        distinctio ipsum amet quibusdam temporibus! Animi explicabo amet
-        cupiditate harum nisi, officiis adipisci nemo deleniti corrupti
-        dignissimos possimus totam quo tempore!
-      </p>
+     <section class ="text-center container">
+        <p class= "text-light">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque distinctio ipsum amet quibusdam temporibus! Animi explicabo amet cupiditate harum nisi, officiis adipisci nemo deleniti corrupti dignissimos possimus totam quo tempore!</p>
+        <p class= "text-light">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque distinctio ipsum amet quibusdam temporibus! Animi explicabo amet cupiditate harum nisi, officiis adipisci nemo deleniti corrupti dignissimos possimus totam quo tempore!</p>
+        <p class= "text-light">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque distinctio ipsum amet quibusdam temporibus! Animi explicabo amet cupiditate harum nisi, officiis adipisci nemo deleniti corrupti dignissimos possimus totam quo tempore!</p>
+
     </section>
     <hr />
-    <footer class="footer d-flex justify-content-between bg-dark">
-      <section class="footer__content">
-        <a class="text-decoration-none text-white" href="explore.html"
-          >our services</a
-        >
-      </section>
-      <section class="footer__content">
-        <p class="footer__content__text">social-links</p>
-        <a class="footer__content__link" href="facebook.com"
-          ><img src="images/facebook.jpg" alt="facebook logo" width="25"
-        /></a>
-        <a class="footer__content__link" href="instagram.com"
-          ><img src="images/instagram.jpg" alt="instagram logo" width="25"
-        /></a>
-        <a href="linkedin.com"
-          ><img src="images/linkedin.jpg" alt="linkedin logo" width="25"
-        /></a>
-      </section>
-      <section class="footer__content">
-        <p class="footer__content__text">More info:</p>
-        <a class="text-decoration-none text-white" href="contact.html">
-          Contact</a
-        >
-        <a class="text-decoration-none text-white" href="about_us.html">
-          About us</a
-        >
-      </section>
+   <footer class = "footer d-flex justify-content-between bg-dark">
+        <section class = "footer__content">
+          <a class = "text-decoration-none text-white" href = "explore.html">our services</a> 
+        </section>
+        <section class = "footer__content">
+            <p class = "footer__content__text">social-links</p>
+            <a class = "footer__content__link" href = "facebook.com"><img src = "images/facebook.jpg" alt = "facebook logo" width ="25"></a>
+            <a class = "footer__content__link" href = "instagram.com"><img src = "images/instagram.jpg" alt = "instagram logo" width="25"></a> 
+            <a href = "linkedin.com"><img src = "images/linkedin.jpg" alt = "linkedin logo" width = "25"></a>
+        </section>
+        <section class = "footer__content">
+            <p class = "footer__content__text"> More info: </p>
+            <a class = "text-decoration-none text-white" href = "contact.html"> Contact</a>
+            <a class = "text-decoration-none text-white" href = "about_us.html"> About us</a>
+        </section>
     </footer>
   </body>
 </html>
