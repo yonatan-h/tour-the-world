@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tour-the-world |Login</title>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        margin: 5% 25%;
+      }
+      form {
+        width: 50%;
+        padding: 5%;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+      }
+
+      input,
+      label {
+        display: block;
+        margin-bottom: 3%;
+        font-size: 18px;
+      }
+      input[type="email"],
+      input[type="password"] {
+        width: 100%;
+        padding: 3%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      input[type="submit"] {
+        margin-left: 25%;
+        width: 50%;
+        padding: 3%;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>LogOut</h1>
+      <p>Are you sure?</p>
+      <button onclick="logOut()">Logout</button>
+    </div>
+
+    <script>
+      function logOut() {
+        localStorage.removeItem("jwt-token");
+        localStorage.removeItem("user-name");
+        localStorage.removeItem("user-id");
+
+        window.location = "home.html";
+      }
+    </script>
+  </body>
+</html>
