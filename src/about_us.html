@@ -33,23 +33,22 @@
     ></script>
     <title>About us</title>
     <style>
-        /*font-size decreasing cannot be done by bootstrap so I used @media*/
-        @media screen and (max-width: 768px){
-          body{
-           font-size: 0.8rem; 
-          }
-          ul{
-            font-size: 0.6rem;
-          }
+      /*font-size decreasing cannot be done by bootstrap so I used @media*/
+      @media screen and (max-width: 768px) {
+        body {
+          font-size: 0.8rem;
         }
-        /*I couldn't achieve putting a background images using bootstrap so I added a bakground images using bootstrap*/
-        body{
-           background-image: url("images/city.jpg");
-           background-repeat: no-repeat;
-           background-size: cover;
+        ul {
+          font-size: 0.6rem;
         }
-        
-      </style>
+      }
+      /*I couldn't achieve putting a background images using bootstrap so I added a bakground images using bootstrap*/
+      body {
+        background-image: url("images/city.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
   </head>
   <body style="font-family: Montserrat Ubuntu">
     <nav
@@ -64,64 +63,95 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarToggledDiv">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="home.html">Home</a>
+        <ul class="navbar-nav w-100">
+          <li class="nav-item mx-auto">
+            <a class="nav-link text-primary" href="home.html">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="explore.html">Explore</a>
+          <li class="nav-item mx-auto">
+            <a class="nav-link text-primary" href="explore.html">Explore</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="food_and_drinks.html">Food and Drinks</a>
+          <li class="nav-item mx-auto">
+            <a class="nav-link text-primary" href="food_and_drinks.html"
+              >Food and Drinks</a
+            >
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="accommodations.html">Accommodations</a>
+          <li class="nav-item mx-auto">
+            <a class="nav-link text-primary" href="accommodations.html"
+              >Accommodations</a
+            >
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
+          <li class="nav-item mx-auto">
+            <a class="nav-link text-primary" href="contact.html">Contact</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about_us.html">About</a>
+          <li class="nav-item mx-auto">
+            <a class="nav-link text-primary" href="about_us.html">About</a>
           </li>
-          <li class="nav-item">
-            <a
-              class="nav-link btn btn-primary"
-              role="button"
-              href="create_account.html"
-              >Home</a
+          <li class="nav-item justify-self-end">
+            <a class="nav-link btn btn-success" role="button" href="login.html"
+              >sign in</a
             >
           </li>
         </ul>
       </div>
     </nav>
-    <header class ="text-center text-light my-5">
-        <h1 class="header__title">About Us</h1>
+    <header class="text-center text-light my-5">
+      <h1 class="header__title">About Us</h1>
     </header>
-    <section class = "text-center">
-        <img class = "w-50" src = "images/place.jpg" alt ="A lake with surrounding area of green">
+    <section class="text-center">
+      <img
+        class="w-50"
+        src="images/place.jpg"
+        alt="A lake with surrounding area of green"
+      />
     </section>
-     <section class ="text-center container">
-        <p class= "text-light">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque distinctio ipsum amet quibusdam temporibus! Animi explicabo amet cupiditate harum nisi, officiis adipisci nemo deleniti corrupti dignissimos possimus totam quo tempore!</p>
-        <p class= "text-light">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque distinctio ipsum amet quibusdam temporibus! Animi explicabo amet cupiditate harum nisi, officiis adipisci nemo deleniti corrupti dignissimos possimus totam quo tempore!</p>
-        <p class= "text-light">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque distinctio ipsum amet quibusdam temporibus! Animi explicabo amet cupiditate harum nisi, officiis adipisci nemo deleniti corrupti dignissimos possimus totam quo tempore!</p>
-
+    <section class="text-center container">
+      <p class="text-light">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque
+        distinctio ipsum amet quibusdam temporibus! Animi explicabo amet
+        cupiditate harum nisi, officiis adipisci nemo deleniti corrupti
+        dignissimos possimus totam quo tempore!
+      </p>
+      <p class="text-light">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque
+        distinctio ipsum amet quibusdam temporibus! Animi explicabo amet
+        cupiditate harum nisi, officiis adipisci nemo deleniti corrupti
+        dignissimos possimus totam quo tempore!
+      </p>
+      <p class="text-light">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque
+        distinctio ipsum amet quibusdam temporibus! Animi explicabo amet
+        cupiditate harum nisi, officiis adipisci nemo deleniti corrupti
+        dignissimos possimus totam quo tempore!
+      </p>
     </section>
     <hr />
-   <footer class = "footer d-flex justify-content-between bg-dark">
-        <section class = "footer__content">
-          <a class = "text-decoration-none text-white" href = "explore.html">our services</a> 
-        </section>
-        <section class = "footer__content">
-            <p class = "footer__content__text">social-links</p>
-            <a class = "footer__content__link" href = "facebook.com"><img src = "images/facebook.jpg" alt = "facebook logo" width ="25"></a>
-            <a class = "footer__content__link" href = "instagram.com"><img src = "images/instagram.jpg" alt = "instagram logo" width="25"></a> 
-            <a href = "linkedin.com"><img src = "images/linkedin.jpg" alt = "linkedin logo" width = "25"></a>
-        </section>
-        <section class = "footer__content">
-            <p class = "footer__content__text"> More info: </p>
-            <a class = "text-decoration-none text-white" href = "contact.html"> Contact</a>
-            <a class = "text-decoration-none text-white" href = "about_us.html"> About us</a>
-        </section>
+    <footer class="footer d-flex justify-content-between bg-dark">
+      <section class="footer__content">
+        <a class="text-decoration-none text-white" href="explore.html"
+          >our services</a
+        >
+      </section>
+      <section class="footer__content">
+        <p class="footer__content__text text-white">social-links</p>
+        <a class="footer__content__link" href="facebook.com"
+          ><img src="images/facebook.jpg" alt="facebook logo" width="25"
+        /></a>
+        <a class="footer__content__link" href="instagram.com"
+          ><img src="images/instagram.jpg" alt="instagram logo" width="25"
+        /></a>
+        <a href="linkedin.com"
+          ><img src="images/linkedin.jpg" alt="linkedin logo" width="25"
+        /></a>
+      </section>
+      <section class="footer__content">
+        <p class="footer__content__text text-white">More info:</p>
+        <a class="text-decoration-none text-white" href="contact.html">
+          Contact</a
+        >
+        <a class="text-decoration-none text-white" href="about_us.html">
+          About us</a
+        >
+      </section>
     </footer>
   </body>
 </html>
