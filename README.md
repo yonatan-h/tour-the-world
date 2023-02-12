@@ -1,6 +1,6 @@
 Title: tour-the-world (Gedion Ezra's Project).
 
-#Group members
+Group members
 
 1. Gedion Ezra UGR/0448/13
 2. Haykel Muktar UGR/3709/13
@@ -8,8 +8,8 @@ Title: tour-the-world (Gedion Ezra's Project).
 4. Maria Tesfaye UGR/9011/13
 5. Yonatan Haile UGR/0431/13
 
-#How to install and use this project on a local machine:
-  ##The local machine should have
+How to install and use this project on a local machine:
+  The local machine should have
     1. mysql server installed
     2. a mysql server user (all grants/privelages should be given to it)
     3. an empty database (can be named "userdb")
