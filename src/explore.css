@@ -1,0 +1,22 @@
+/*font-size decreasing cannot be done by bootstrap so I used @media*/
+      @media screen and (max-width: 768px) {
+        body {
+          font-size: 0.8rem;
+        }
+        ul {
+          font-size: 0.6rem;
+        }
+      }
+
+      .country-add-prompt {
+        border: 5px dashed white;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+      }
+
+      /*I couldn't achieve putting a background images using bootstrap so I added a bakground images using bootstrap*/
+      body {
+        background-image: url("images/cityBackground.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
