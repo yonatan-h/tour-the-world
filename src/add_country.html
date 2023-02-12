@@ -13,30 +13,64 @@
     <script src="bootstrap/js/bootstrap.js" defer></script>
 
     <title>Document</title>
+    <style>
+        body{
+            background-image: linear-gradient(to left top, rgb(6, 216, 244), rgb(0, 132, 255));
+        }
+        .country-input{
+            margin-top: 10%;
+        }
+    </style>
+    
 </head>
 <body>
-    <form action="http://localhost:3000/country-info" method="post" enctype="multipart/form-data">
-        <div>
-          <label for="country">Country Name:</label>
-          <input type="text" id="country" name="country">
-        </div>
-        <div>
-            <label for="profileImage"> Country Image: </label>
-            <input type="file" id="profileImage" name="images">
-        </div>
-        <div>
-          <label for="text">Text:</label>
-          <textarea id="text" name="text"></textarea>
-        </div>
-        <div>
-            <label for="Image"> Additional country Image: </label>
-            <input type="file" id="Image" name="images" multiple>
-        </div>
-        <div>
-            <label for="FoodImage"> Food and Drinks Image: </label>
-            <input type="file" id="FoodImage" name="images" multiple>
-        </div>
-        <button type="submit">Submit</button>
-    </form>
+    <div class="country-input text-light">
+        <h1 class="text-center">Document Your Travels!</h1>
+        <form action="http://localhost:3000/country-info" method="post" enctype="multipart/form-data" class="container mt-5 ">
+            <div class="form-group row">
+            <label for="country" class="col-sm-2 col-form-label my-2">Country Name:</label>
+            <div class="col-sm-10">
+                <input type="text" id="country" name="country" class="form-control">
+            </div>
+            </div>
+            <div class="form-group row my-2">
+                <label for="profileImage" class="col-sm-2 col-form-label">Country Image:</label>
+                <div class="col-sm-10">
+                <input type="file" id="profileImage" name="images" class="form-control-file">
+                </div>
+            </div>
+            <div class="form-group row">
+            <label for="text" class="col-sm-2 col-form-label">Text:</label>
+            <div class="col-sm-10 my-3">
+                <textarea id="text" name="text" class="form-control" rows="5" maxlength="500" style="resize: none;"></textarea>
+            </div>
+            </div>
+            <div class="form-group row">
+                <label for="Image" class="col-sm-2 col-form-label">Additional country Image:</label>
+                <div class="col-sm-10">
+                <input type="file" id="Image" name="images" multiple class="form-control-file" onchange="checkFileLimit(this, 3)">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="FoodImage" class="col-sm-2 col-form-label">Food and Drinks Image:</label>
+                <div class="col-sm-10">
+                <input type="file" id="FoodImage" name="images" multiple class="form-control-file" onchange="checkFileLimit(this, 3)">
+                </div>
+            </div>
+            <div class="form-group row mx-auto w-25 my-5">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
 </body>
+
+<script>
+function checkFileLimit(input, limit) {
+    if (input.files.length > limit) {
+        alert(`You can only upload ${limit} files for this input`);
+        input.value = "";
+    }
+}
+</script>
+
 </html>
