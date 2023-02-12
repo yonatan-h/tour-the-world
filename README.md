@@ -8,6 +8,10 @@ Group members
 4. Maria Tesfaye UGR/9011/13
 5. Yonatan Haile UGR/0431/13
 
+For this project we decided to use the relational database MySQL. The reason we used MySQL is mainly for two reasons:
+  1. It's a widely known relational database, so most people that will see our project will highly likely have MySQL
+  2. It's easier to implement an offline system using this relational database than the rest.
+
 How to install and use this project on a local machine:
   The local machine should have
     1. mysql server installed
