@@ -58,6 +58,9 @@ export class CountryInfoService {
     return imageName;
   }
 
+  async getCountryByName(country: string){
+    return this.data.findOne({ where: { country }});
+  }
   update(@Body() text: UpdateFile, id: number) {
       return this.data.update(id, text);
   }

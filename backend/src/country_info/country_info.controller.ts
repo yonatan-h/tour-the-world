@@ -38,6 +38,10 @@ export class CountryInfoController {
   async getImages() {
     return await this.countryService.get();
   }
+  @Get(':country')
+  async getCountryByName(@Param('country') country: string ){
+    return await this.countryService.getCountryByName(country);
+  }
 
   @Post()
   @UseInterceptors(FilesInterceptor('images', 7, imageStorage))

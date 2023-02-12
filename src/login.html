@@ -4,9 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Sofia|Oswald"
+    />
+    <script src="bootstrap/js/bootstrap.js" defer></script>
+
     <title>Tour-the-world |Login</title>
     <style>
-      .container {
+      /* .container {
         display: flex;
         flex-direction: column;
         margin: 5% 25%;
@@ -45,18 +53,18 @@
 
       input[type="submit"]:hover {
         background-color: #3e8e41;
-      }
+      } */
     </style>
   </head>
   <body>
-    <div class="container">
-      <form id="authenticateUserForm">
+    <div>
+      <form id="authenticateUserForm" class="row">
         <h1>Login</h1>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
+        <label for="email" class="col-md-2">Email:</label>
+        <input type="email" id="email" name="email" class="col-8" required />
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required />
+        <label for="password" class="col-md-4">Password:</label>
+        <input type="password" id="password"  class="col-md-8" name="password" required />
 
         <input type="submit" value="Login" />
       </form>
