@@ -10,10 +10,10 @@ Group members
 
 How to install and use this project on a local machine:
   -The local machine should have
-    mysql server installed
-    a mysql server user (all grants/privelages should be given to it)
-    an empty database (can be named "userdb")
-    nodejs installed
+    -mysql server installed
+    -a mysql server user (all grants/privelages should be given to it)
+    -an empty database (can be named "userdb")
+    -nodejs installed
   
   1. Clone this repository on local machine.
   2. Go to the root of the repository (in the command line).
