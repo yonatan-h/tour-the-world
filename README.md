@@ -28,6 +28,6 @@ How to install and use this project on a local machine:
      5.2. set "password" to the password of the mysql user
      5.3. set "database" to the name of the empty database
   6. run "npm run start:dev" to start as a development server
-  7. open home.html in /src/home/html
+  7. open home.html in /src/home.html
   8. navigate and use the website
      
