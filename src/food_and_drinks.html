@@ -242,6 +242,8 @@
         const foodImages = await getFoodsImages(lowerCase);
 
         if (foodImages) {
+          foodsSection.innerHTML = ""; //remove whats inside
+
           foodsSection.appendChild(buildFoodsSection(countryName, foodImages));
         } else {
           alert(`There are no search results for ${countryName}`);
