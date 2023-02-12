@@ -1,4 +1,9 @@
-import { Injectable, UploadedFiles, Body, UseInterceptors } from '@nestjs/common';
+import {
+  Injectable,
+  UploadedFiles,
+  Body,
+  UseInterceptors,
+} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { FilesInterceptor } from '@nestjs/platform-express';
 import { json, text } from 'stream/consumers';
@@ -9,36 +14,47 @@ import { UpdateFile } from './dto/UpdateFile.dto';
 
 @Injectable()
 export class CountryInfoService {
-    constructor(
-        @InjectRepository(CountryData)
-        private data: Repository<CountryData>){}
-    
-    
-    get(): Promise<CountryData[]>{
-        return this.data.find()
-    }
-    saveFile(@Body()textDescription, fileData: FileImageInput){
-        console.log(fileData);
-        const imagearr = this.parseImages(fileData);
-        const something = {
-            text: textDescription.text,
-            country: textDescription.country,
-            profilefilename: imagearr.shift(),
-            additional_pics: imagearr.join(",")
-        };
-        return this.data.save(something);
-    }
+  constructor(
+    @InjectRepository(CountryData)
+    private data: Repository<CountryData>,
+  ) {}
 
-    parseImages(images: any){
-        const imageName = []
-        for (const i of images){
-            imageName.push(i.filename);
-        }
-        return imageName;
-    }
+  async get(): Promise<any> {
+    const countries = await this.data.find();
+    const withSplittedImages = countries.map((country) => {
+      return {
+        id: country.id,
+        country: country.country,
+        profilefilename: country.profilefilename,
+        additional_pics: country.additional_pics.split(','),
+        text: country.text,
+      };
+    });
 
-    update(@Body() text: UpdateFile, id: number){
-        console.log(text);
-        return this.data.update(id, text);
+    return withSplittedImages;
+  }
+  saveFile(@Body() textDescription, fileData: FileImageInput) {
+    console.log(fileData);
+    const imagearr = this.parseImages(fileData);
+    const something = {
+      text: textDescription.text,
+      country: textDescription.country,
+      profilefilename: imagearr.shift(),
+      additional_pics: imagearr.join(','),
+    };
+    return this.data.save(something);
+  }
+
+  parseImages(images: any) {
+    const imageName = [];
+    for (const i of images) {
+      imageName.push(i.filename);
     }
+    return imageName;
+  }
+
+  update(@Body() text: UpdateFile, id: number) {
+    console.log(text);
+    return this.data.update(id, text);
+  }
 }

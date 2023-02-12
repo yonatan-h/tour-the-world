@@ -75,176 +75,526 @@
       </div>
     </nav>
     <h1>Explore!</h1>
-    <section role="information_card">
-      <div>
-        <button>
-          <h2>Ethiopia</h2>
-          <a href="accommodations.html"
-            ><img
-              src="images/Ethiopia.jpg"
-              width="100"
-              alt="A picture of Ethiopia's siemen mountains"
-          /></a>
-        </button>
-        <p>
-          Known for her uniqueness and diversity, Ethiopia has a lot to offer.
-          From breath-taking views and atmosphere to tasty cuisines. Ethiopia is
-          located at the heart of the horn of Africa.
-        </p>
-        <p>
-          Check out Ethiopia's
-          <a href="food_and_drinks.html">Food and Drinks</a> section
-        </p>
-        <p>Temperature: Normal (20-25 degrees on average)</p>
-        <p>Overall experience: Amazing</p>
-        <section role="slideshow">
-          <p>Check out more from Ethiopia:</p>
-          <img
-            src="images/Dallol.jpg"
-            width="200"
-            alt="A picture of a place called dallol in Ethiopia."
-          />
-          <img
-            src="images/Ethiopia1.jpg"
-            width="200"
-            alt="A picture of a waterfall and a grassy land in Ethiopia"
-          />
-          <img
-            src="images/Ethiopia2.jpg"
-            width="200"
-            alt="A photo of a city in Ethiopia"
-          />
-          <img
-            src="images/Sofumer.jpg"
-            width="200"
-            alt="Sofumer cave in the day."
-          />
+    <header class="text-center text-light">
+      <h1 class="header">Explore!</h1>
+    </header>
+    <div class="countries-js">
+      <div class="accordion-item w-75 py-2 mx-auto">
+        <h2 class="accordion-header" id="headingTwo">
+          <button
+            class="accordion-button bg-dark text-white rounded-4 p-2"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo"
+            aria-expanded="true"
+            aria-controls="collapseTwo"
+          >
+            <div class="d-flex justify-content-between w-100">
+              <p>Bali</p>
+              <img src="images/bali.jpg" width="60" alt="A temple of bali" />
+            </div>
+          </button>
+        </h2>
+        <section
+          id="collapseTwo"
+          class="accordion-collapse collapse show py-3 w-75 mx-auto"
+          aria-labelledby="headingTwo"
+          data-bs-parent="#dropdown"
+        >
+          <div class="accordion-body bg-info rounded-3 text-white text-center">
+            <p class="card__hidden-content__text">
+              If you want to get in touch with nature then bali is the right
+              choice! With beautiful sites to explore bali offers a wide range
+              of culture one will expect from indonesia.
+            </p>
+
+            <div class="py-3">
+              <img
+                class="w-25"
+                src="images/Uluwatu.jpg"
+                alt="A part of Uluwatu temple that is overlooking a lake"
+              />
+              <img
+                class="w-25"
+                src="images/ulun.jpg"
+                alt="A place called Pura ulun Danu Bratan in bali"
+              />
+              <img
+                class="w-25"
+                src="images/Nusaduabeach.jpg"
+                width="200"
+                alt="A drone shot photo of a beach in bali"
+              />
+            </div>
+          </div>
         </section>
       </div>
-      <div>
-        <button>
-          <h2>Bali</h2>
-          <a href="accommodations.html"
-            ><img
-              src="images/bali.jpg"
-              width="100"
-              alt="A picture of a site in bali"
-          /></a>
-        </button>
-        <p>
-          If you want to get in touch with nature then bali is the right choice!
-          With beautiful sites to explore bali offers a wide range of culture
-          one will expect from indonesia.
-        </p>
-        <p>
-          Check out Bali's
-          <a href="food_and_drinks.html">Food and Drinks</a> section
-        </p>
-        <p>Temperature: tropical (27-31 degrees on average)</p>
-        <p>Overall experience: Amazing</p>
-        <section role="slideshow">
-          <p>Check out more from Bali:</p>
-          <img
-            src="images/Uluwatu.jpg"
-            width="200"
-            alt="A part of Uluwatu temple that is overlooking a lake "
-          />
-          <img
-            src="images/ulun.jpg"
-            width="200"
-            alt="A place called Pura ulun Danu Bratan in bali"
-          />
-          <img
-            src="images/Nusaduabeach.jpg"
-            width="200"
-            alt="A drone shot photo of a beach in bali  "
-          />
-        </section>
-      </div>
-      <div>
-        <button>
-          <h2>Brazil</h2>
-          <a href="accommodations.html"
-            ><img
-              src="images/brazil.jpg"
-              width="100"
-              alt="A picture of rio de janerio"
-          /></a>
-        </button>
-        <p>
-          Known for the one and only Amazon rainforest, Brazil has a lot to
-          offer. It is the home of many legendary football players from
-          Rolandinho to Neymar. If you want to go to a place where you want to
-          dance and eat tasty dishes then brazil is the right choice.
-        </p>
-        <p>
-          Check out Brazil's
-          <a href="food_and_drinks.html">Food and Drinks</a> section
-        </p>
-        <p>Temperature: Normal (20-25 degrees on average)</p>
-        <p>Overall experience: Amazing</p>
-        <section role="slideshow">
-          <p>Check out more from Brazil:</p>
-          <img
-            src="images/IgazufallsBrazil.jpg"
-            width="200"
-            alt="A waterfall in brazil "
-          />
-          <img
-            src="images/amazon.jpg"
-            width="200"
-            alt="A picture of a waterfall and a grassy land in Ethiopia"
-          />
-          <img
-            src="images/Ethiopia2.jpg"
-            width="200"
-            alt="A picutre of a city in Ethiopia"
-          />
-        </section>
-      </div>
-      <!--audio section-->
-    </section>
-    <p>
+    </div>
+
+    <p class="text-center text-white">
       Hear the vibrance of the world, ranging from musics to the sound of
       nature, our best picks for you!
     </p>
-    <section>
-      <div>
-        <audio
-          src="audios/birds.mp3"
-          controls
-          aria-describedby="description-birds"
-        ></audio>
-        <div id="description-birds">
-          <button>Description</button>
-          <p>Sounds of Birds chirping in a quiet area</p>
-        </div>
+    <section class="row w-100 mx-auto my-5">
+      <div class="col-lg-4 col-sm-12">
+        <audio class="w-100" src="audios/birds.mp3" controls></audio>
       </div>
-      <div>
-        <audio
-          src="audios/rainforest.mp3"
-          controls
-          aria-describedby="description-rainforest"
-        ></audio>
-        <div id="description-rainforest">
-          <button>Description</button>
-          <p>
-            A sound of rain is heard from a rainforest and sounds of some
-            animals in the rain forest.
-          </p>
-        </div>
+      <div class="col-lg-4 col-sm-12">
+        <audio class="w-100" src="audios/rainforest.mp3" controls></audio>
       </div>
-      <div>
-        <audio
-          src="audios/waves.mp3"
-          controls
-          aria-describedby="description-waves"
-        ></audio>
-        <div id="description-waves">
-          <button>Description</button>
-          <p>Waves of the ocean are heard crashing into one another.</p>
-        </div>
+      <div class="col-lg-4 col-sm-12">
+        <audio class="w-100" src="audios/waves.mp3" controls></audio>
       </div>
     </section>
+
+    <script>
+      function amLoggedIn() {
+        return localStorage.getItem("jwt-token") !== null;
+      }
+
+      function getCurrentUserId() {
+        const userId = localStorage.getItem("user-id");
+        return +userId;
+      }
+
+      async function getUserName(userId) {
+        const result = await fetch(`http://localhost:3000/users/${userId}`);
+        const data = await result.json();
+        console.log(data);
+        const userName = data.name;
+        return userName;
+      }
+
+      async function loadComments() {
+        const countryDivs = [...document.querySelectorAll(".country-js")];
+        console.log(countryDivs);
+        for (const countryDiv of countryDivs) {
+          const commentsDiv = countryDiv.querySelector(".comments-js");
+          commentsDiv.innerHTML = ""; //reset
+
+          const countryId = countryDiv.getAttribute("id");
+          const plainComments = await getCountryComments(countryId);
+          console.log(plainComments);
+          const comments = await mapToNormalComments(plainComments);
+
+          for (const comment of comments) {
+            const isCurrentUser = comment.userId === getCurrentUserId();
+
+            let commentDiv;
+            if (isCurrentUser && amLoggedIn()) {
+              commentDiv = createCrudCommentDiv(comment, countryId);
+            } else {
+              commentDiv = createReadOnlyCommentDiv(comment);
+            }
+            commentsDiv.appendChild(commentDiv);
+          }
+          if (amLoggedIn()) {
+            const emptyCommentDiv = await createEmptyCommentDiv(countryId);
+            commentsDiv.appendChild(emptyCommentDiv);
+          } else {
+            const loginSuggestP = document.createElement("p");
+            loginSuggestP.textContent =
+              "login to write, edit, and delte your comments";
+            commentsDiv.appendChild(loginSuggestP);
+          }
+        }
+      }
+
+      async function mapToNormalComments(plainComments) {
+        const normalComments = [];
+        for (const plainComment of plainComments) {
+          const content = plainComment.content;
+          const userId = plainComment.userid;
+          const date = plainComment.date;
+
+          const userName = await getUserName(userId);
+
+          const normalComment = {
+            userName,
+            content,
+            date,
+            userId,
+          };
+          normalComments.push(normalComment);
+        }
+        return normalComments;
+      }
+
+      function createReadOnlyCommentDiv(comment) {
+        const { userName, userId, content, date } = comment;
+        const friendlyDate = new Date(date).toLocaleTimeString();
+
+        const divString = `
+          <div>
+              <p>${userName}: ${friendlyDate}</p>
+              <p>${comment.content}</p>
+          </div>
+          `;
+        const domParser = new DOMParser();
+        const div = domParser.parseFromString(divString, "text/html").body
+          .firstElementChild;
+
+        return div;
+      }
+
+      async function createEmptyCommentDiv(countryId) {
+        const myUserName = await getUserName(getCurrentUserId());
+        const divString = `<div>
+            <p>Write new comment</p>
+              <textarea class="post-text-area" cols="20" rows="3"></textarea>
+              <br/>
+             <button onclick="postComment(${countryId})">Send</button>
+          </div>`;
+        const domParser = new DOMParser();
+        const div = domParser.parseFromString(divString, "text/html").body
+          .firstElementChild;
+
+        return div;
+      }
+
+      function createCrudCommentDiv(comment, countryId) {
+        const { userName, userId, content, date } = comment;
+        const textareaId = countryId.toString() + userId.toString() + date;
+        const friendlyDate = new Date(date).toLocaleTimeString();
+
+        const divString = `
+          <div>
+              <p>${userName}: ${friendlyDate}</p>
+              <textarea id="${textareaId}" cols="20" rows="3">${content}</textarea>
+              <br/>
+                  <button onclick="updateComment('${countryId}', '${userId}', '${date}')" >Save Edited</button>
+                  <button onclick="deleteComment('${countryId}', '${userId}', '${date}')">Delete</button>
+          </div>
+          `;
+        const domParser = new DOMParser();
+        const div = domParser.parseFromString(divString, "text/html").body
+          .firstElementChild;
+
+        return div;
+      }
+
+      function alertEmptyComment() {
+        alert("Please write non empty comments!");
+      }
+
+      async function getCountryComments(countryId) {
+        const result = await fetch(
+          `http://localhost:3000/comments/${countryId}`
+        );
+        const data = await result.json();
+        return data;
+      }
+
+      //crud points
+      async function postComment(countryId) {
+        const countryDiv = document.getElementById(countryId);
+        const textarea = countryDiv.querySelector(".post-text-area");
+        const content = textarea.value;
+        if (!content) return alertEmptyComment();
+
+        const submittedComment = { content };
+        const myUserId = getCurrentUserId();
+        const authorizationHeader =
+          "Bearer " + localStorage.getItem("jwt-token");
+
+        await fetch(`http://localhost:3000/comments/${countryId}/${myUserId}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: authorizationHeader,
+          },
+          body: JSON.stringify(submittedComment),
+        });
+        loadComments();
+      }
+
+      async function updateComment(countryId, myUserId, date) {
+        const textareaId = countryId + myUserId + date;
+        const content = document.getElementById(textareaId).value;
+        if (!content) return alertEmptyComment();
+
+        const submittedComment = { content };
+        const authorizationHeader =
+          "Bearer " + localStorage.getItem("jwt-token");
+        await fetch(
+          `http://localhost:3000/comments/${countryId}/${myUserId}/${date}`,
+          {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: authorizationHeader,
+            },
+
+            body: JSON.stringify(submittedComment),
+          }
+        );
+        loadComments();
+      }
+
+      async function deleteComment(countryId, myUserId, date) {
+        const authorizationHeader =
+          "Bearer " + localStorage.getItem("jwt-token");
+        await fetch(
+          `http://localhost:3000/comments/${countryId}/${myUserId}/${date}`,
+          {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: authorizationHeader,
+            },
+          }
+        );
+
+        loadComments();
+      }
+    </script>
+
+    <script>
+      loadCountries();
+
+      function amLoggedIn() {
+        return localStorage.getItem("jwt-token") !== null;
+      }
+
+      async function getCountries() {
+        const getCountriesUrl = "http://localhost:3000/country-info"; //FIX THIS -------------
+        const result = await fetch(getCountriesUrl);
+        const data = result.json();
+        return data;
+      }
+
+      async function loadCountries() {
+        const countriesContainer = document.querySelector(".countries-js");
+        countriesContainer.innerHTML = ""; //reset
+        const countries = await getCountries();
+        console.log(countries);
+
+        for (const country of countries) {
+          const countryId = country.id; //FIX THIS -------------
+          const title = country.country; //FIX THIS -------------
+          const description = country.text; //FIX THIS -------------
+          const mainImage = country.profilefilename; //FIX THIS ------
+          const images = country.additional_pics; //FIX THIS -------------
+
+          let countryCard;
+          if (amLoggedIn()) {
+            countryCard = crudCountryCard(
+              countryId,
+              title,
+              description,
+              mainImage,
+              images
+            );
+          } else {
+            countryCard = readOnlyCountryCard(
+              countryId,
+              title,
+              description,
+              mainImage,
+              images
+            );
+          }
+          countriesContainer.appendChild(countryCard);
+        }
+
+        console.log("here");
+        await loadComments();
+      }
+
+      function getImageFolderPath() {
+        const path = `../backend/uploads/images/additionalImages/`;
+        return path;
+      }
+
+      function crudCountryCard(
+        countryId,
+        title,
+        description,
+        mainImage,
+        images
+      ) {
+        //FIX IMAGE SOURCE
+
+        let imageElements = "";
+        for (const imageName of [mainImage, ...images]) {
+          const imageElement = `<img
+                class="w-25"
+                src="${getImageFolderPath()}/${imageName}"
+                alt="a picture of ${title}"
+              />`;
+          imageElements += imageElement;
+        }
+
+        const textAreaId = `${countryId}-country-edit-js`;
+
+        const divString = `
+        <div class="accordion-item w-75 py-2 mx-auto country-js" id="${countryId}">
+        <h2 class="accordion-header" id="headingTwo">
+          <button
+            class="accordion-button bg-dark text-white rounded-4 p-2"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse-${countryId}"
+            aria-expanded="true"
+            aria-controls="collapseTwo"
+          >
+            <div class="d-flex justify-content-between w-100">
+              <p>${title}</p>
+              <img src="${getImageFolderPath()}/${mainImage}" width="60" alt="A temple of bali" />
+            </div>
+          </button>
+        </h2>
+        <section
+          id="collapse-${countryId}"
+          class="accordion-collapse collapse show py-3 w-75 mx-auto"
+          aria-labelledby="headingTwo"
+          data-bs-parent="#dropdown"
+        >
+          <div class="accordion-body bg-info rounded-3 text-white text-center">
+
+
+            <textarea class="card__hidden-content__text" id="${textAreaId}">
+              ${description}
+            </textarea>
+
+            
+            <div>
+              <button onclick="updateCountry('${countryId}', '${textAreaId}')" >Save</button>
+              <button onclick="deleteCountry('${countryId}')">Delete</button>
+            </div>
+            <div class="py-3">
+              ${imageElements}
+            </div>
+            <div class="comments-js">
+                <!-- comment -->
+            </div>
+          </div>
+          
+          
+        </section>
+
+      </div>
+        `;
+        const domParser = new DOMParser();
+        const div = domParser.parseFromString(divString, "text/html").body
+          .firstElementChild;
+
+        return div;
+      }
+
+      function readOnlyCountryCard(
+        countryId,
+        title,
+        description,
+        mainImage,
+        images
+      ) {
+        let imageElements = "";
+        for (const imageName of [mainImage, ...images]) {
+          const imageElement = `<img
+                class="w-25"
+                src="${getImageFolderPath()}/${imageName}"
+
+                alt="a picture of ${title}"
+              />`;
+          imageElements += imageElement;
+        }
+
+        const divString = `
+        <div class="accordion-item w-75 py-2 mx-auto country-js" id="${countryId}">
+        <h2 class="accordion-header" id="headingTwo">
+          <button
+            class="accordion-button bg-dark text-white rounded-4 p-2"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse-${countryId}"
+            aria-expanded="true"
+            aria-controls="collapseTwo"
+          >
+            <div class="d-flex justify-content-between w-100">
+              <p>${title}</p>
+              <img src="${getImageFolderPath()}/${mainImage}" width="60" alt="A temple of bali" />
+            </div>
+          </button>
+        </h2>
+        <section
+          id="collapse-${countryId}"
+          class="accordion-collapse collapse show py-3 w-75 mx-auto"
+          aria-labelledby="headingTwo"
+          data-bs-parent="#dropdown"
+        >
+          <div class="accordion-body bg-info rounded-3 text-white text-center">
+
+
+            <p class="card__hidden-content__text">
+              ${description}
+            </p>
+
+            <div class="py-3">
+              ${imageElements}
+            </div>
+            <div class="comments-js">
+                <!-- comment -->
+            </div>
+          </div>
+          
+          
+        </section>
+
+      </div>
+        `;
+
+        const domParser = new DOMParser();
+        const div = domParser.parseFromString(divString, "text/html").body
+          .firstElementChild;
+
+        return div;
+      }
+
+      function alertEmptyCountry() {
+        alert("Please write non empty country cards!");
+      }
+
+      //crud points
+      async function updateCountry(countryId, textAreaId) {
+        console.log(textAreaId);
+        const description = document.getElementById(textAreaId).value;
+        if (!description) return alertEmptyCountry();
+
+        const body = JSON.stringify({ text: description });
+        const jwtToken = localStorage.getItem("jwt-token");
+        const authorizationHeader = "Bearer " + jwtToken;
+
+        const result = await fetch(
+          `http://localhost:3000/country-info/${countryId}`, //FIX THIS
+          {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: authorizationHeader,
+            },
+
+            body: body,
+          }
+        );
+        console.log(result);
+        await loadCountries();
+      }
+
+      async function deleteCountry(countryId) {
+        const jwtToken = localStorage.getItem("jwt-token");
+        const authorizationHeader = "Bearer " + jwtToken;
+
+        await fetch(`http://localhost:3000/country-info/${countryId}`, {
+          //FIX THIS ----------------
+          method: "DELETE",
+          headers: {
+            Authorization: authorizationHeader,
+          },
+        });
+
+        await loadCountries();
+      }
+    </script>
   </body>
 </html>
