@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
     <link
       rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
+      href="https://fonts.googleapis.com/css?family=Sofia|Oswald"
     />
+    <script src="bootstrap/js/bootstrap.js" defer></script>
     <style>
       /*font-size decreasing cannot be done by bootstrap so I used @media*/
       @media screen and (max-width: 768px) {
@@ -27,27 +27,8 @@
         background-size: cover;
       }
     </style>
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?Montserrat|Ubuntu"
-    />
   </head>
-  <body>
+  <body class="text-light">
     <!-- We're making the nav-bar here -->
     <nav
       class="navbar d-flex justify-content-center navbar-expand-lg navbar-dark bg-dark"
@@ -63,33 +44,33 @@
       <div class="collapse navbar-collapse" id="navbarToggledDiv">
         <ul class="navbar-nav w-100">
           <li class="nav-item mx-auto">
-            <a class="nav-link text-primary" href="home.html">Home</a>
+            <a class="nav-link text-light" href="home.html">Home</a>
           </li>
           <li class="nav-item mx-auto">
-            <a class="nav-link text-primary" href="explore.html">Explore</a>
+            <a class="nav-link text-light" href="explore.html">Explore</a>
           </li>
           <li class="nav-item mx-auto">
-            <a class="nav-link text-primary" href="food_and_drinks.html"
+            <a class="nav-link text-light" href="food_and_drinks.html"
               >Food and Drinks</a
             >
           </li>
           <li class="nav-item mx-auto">
-            <a class="nav-link text-primary" href="accommodations.html"
+            <a class="nav-link text-light" href="accommodations.html"
               >Accommodations</a
             >
           </li>
           <li class="nav-item mx-auto">
-            <a class="nav-link text-primary" href="contact.html">Contact</a>
+            <a class="nav-link text-light" href="contact.html">Contact</a>
           </li>
           <li class="nav-item mx-auto">
-            <a class="nav-link text-primary" href="about_us.html">About</a>
+            <a class="nav-link text-light" href="about_us.html">About</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link btn btn-success" role="button" href="login.html"
+          <li class="nav-item mx-auto my-1">
+            <a class="nav-link btn bg-primary" role="button" href="login.html"
               >sign in</a
             >
           </li>
-          <li class="nav-item mx-auto">
+          <li class="nav-item mx-auto my-1">
             <a class="nav-link btn btn-warning" role="button" href="logout.html"
               >log out</a
             >
@@ -97,141 +78,71 @@
         </ul>
       </div>
     </nav>
-    <header class="d-flex justify-content-center">
-      <h1 class="my-5">Explore with us!</h1>
-    </header>
-    <!--We have a slideshow class here with buttons and images-->
-    <div
-      id="albumLike"
-      class="carousel slide w-75 mx-auto"
-      data-bs-ride="carousel"
-    >
-      <div class="carousel-inner rounded-5">
-        <div class="carousel-item active">
-          <img
-            src="images/kuta-beach-bali.jpg"
-            class="d-block w-100"
-            alt=" A picture of an ocean"
-          />
-        </div>
-        <div class="carousel-item">
-          <img
-            src="images/tokyo.jpg"
-            class="d-block w-100"
-            alt=" A picture of an ocean"
-          />
-        </div>
-        <div class="carousel-item">
-          <img
-            src="images/Uluwatu.jpg"
-            class="d-block w-100"
-            alt=" A picture of a mountain"
-          />
-        </div>
-      </div>
-      <a
-        class="carousel-control-prev"
-        href="#albumLike"
-        role="button"
-        data-slide="prev"
-      >
-        <span class="carousel-control-prev-icon"></span>
-      </a>
-      <a
-        class="carousel-control-next"
-        href="#albumLike"
-        role="button"
-        data-slide="next"
-      >
-        <span class="carousel-control-next-icon"></span>
-      </a>
-    </div>
-    <div class="d-flex justify-content-center">
-      <p class="my-5">
-        Not sure where to travel? we got you! With out website you can explore
-        exotic places digitally and get all the information ranging from pricing
-        to meals about them, so pack and travel!
-      </p>
-    </div>
+    <header class = "d-flex justify-content-center my-5">
+      <h1 class = "header__title">Explore with us!</h1>
+   </header>
+   <div id="albumLike" class = "carousel slide w-75 mx-auto" data-bs-ride="carousel">
+     <div class="carousel-inner rounded-5">
+       <div class="carousel-item active">
+         <img src="images/lake.jpg" class="d-block w-100" alt = " A picture of an ocean">
+       </div>
+       <div class="carousel-item">
+         <img src="images/japan1.jpg" class="d-block w-100" alt = " A picture of an ocean">
+       </div>
+       <div class="carousel-item">
+         <img src="images/mountains.jpg" class="d-block w-100" alt = " A picture of an ocean">
+       </div>
+     </div>
+     <button class="carousel-control-prev" type="button" data-bs-target="#albumLike" data-bs-slide="prev">
+       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+       <span class="visually-hidden">Previous</span>
+     </button>
+     <button class="carousel-control-next" type="button" data-bs-target="#albumLike" data-bs-slide="next">
+       <span class="carousel-control-next-icon"></span>
+       <span class="visually-hidden">Next</span>
+     </button>
+   </div>
+   <div class = "d-flex justify-content-center">
+       <p class = "my-5 text-white">Not sure where to travel? we got you! With out website you can explore exotic places digitally and get all the information ranging from pricing to meals about them, so pack and travel!</p>
+   </div>
 
-    <!--Next section is dedicated to videos-->
-    <div class="row w-100 mx-auto">
-      <section class="col-lg-4 col-sm-12">
-        <video src="Videos/bali.mp4" controls muted class="w-75 rounded-5">
-          <track
-            kind="captions"
-            label="English captions"
-            src="captions/bali_caption.txt"
-            srclang="en"
-            default
-          />
-        </video>
-        <p>Take in the beautiful view of Bali!!</p>
-      </section>
-      <section class="col-lg-4 col-sm-12">
-        <video src="Videos/japan.mp4" controls muted class="w-75 rounded-5">
-          <track
-            src="captions/japan_caption.txt"
-            label="English"
-            kind="captions"
-            srclang="en"
-            default
-          />
-        </video>
-        <p class="videoHolder__section__text">
-          Enjoy the culture rich and beautiful Japan!
-        </p>
-      </section>
-      <section class="col-lg-4 col-sm-12">
-        <video
-          src="Videos/switzerland.mp4"
-          controls
-          muted
-          class="w-75 rounded-5"
-        >
-          <track
-            label="English"
-            kind="captions"
-            src="captions/switzerland_caption.txt"
-            srclang="en"
-            default
-          />
-        </video>
-        <p class="w-75">
-          Explore the cold home of the vikings. The birthplace of valhalla and
-          all other nord mythologies
-        </p>
-      </section>
-    </div>
-    <!--Description for the videos-->
-    <footer class="footer d-flex justify-content-between bg-dark">
-      <section class="footer__content">
-        <a class="text-decoration-none text-white" href="explore.html"
-          >our services</a
-        >
-      </section>
-      <section class="footer__content">
-        <p class="footer__content__text text-white">social-links</p>
-        <a class="footer__content__link" href="facebook.com"
-          ><img src="images/facebook.jpg" alt="facebook logo" width="25"
-        /></a>
-        <a class="footer__content__link" href="instagram.com"
-          ><img src="images/instagram.jpg" alt="instagram logo" width="25"
-        /></a>
-        <a href="linkedin.com"
-          ><img src="images/linkedin.jpg" alt="linkedin logo" width="25"
-        /></a>
-      </section>
-      <section class="footer__content">
-        <p class="footer__content__text text-white">More info:</p>
-        <a class="text-decoration-none text-white" href="contact.html">
-          Contact</a
-        >
-        <a class="text-decoration-none text-white" href="about_us.html">
-          About us</a
-        >
-      </section>
-    </footer>
-  </body>
+   <!--Next section is dedicated to videos-->
+   <div class = "row w-100 mx-auto">
+     <section class = "col-lg-4 col-sm-12">
+       <video src = "Videos/bali.mp4" controls muted class = "w-75 rounded-5">
+           <track kind="captions" label="English captions" src = "captions/bali_caption.txt" srclang="en" default>
+       </video>
+       <p>Take in the beautiful view of Bali!!</p>
+     </section>
+     <section class = "col-lg-4 col-sm-12">
+       <video src = "Videos/japan.mp4" controls muted class = "w-75 rounded-5">
+           <track src = "captions/japan_caption.txt" label="English" kind="captions" srclang="en" default>
+       </video>
+       <p class = "videoHolder__section__text">Enjoy the culture rich and beautiful Japan!</p>
+     </section>
+     <section class = "col-lg-4 col-sm-12">
+       <video src = "Videos/switzerland.mp4" controls muted class = "w-75 rounded-5">
+           <track label="English" kind="captions" src = "captions/switzerland_caption.txt" srclang="en" default>
+       </video>
+       <p class = "w-75">Explore the cold home of the vikings. The birthplace of valhalla and all other nord mythologies</p>
+     </section>
+   </div>
+   <!--Description for the videos-->
+   <footer class = "footer d-flex justify-content-between bg-dark">
+       <section class = "footer__content">
+         <a class = "text-decoration-none text-white" href = "explore.html">our services</a> 
+       </section>
+       <section class = "footer__content">
+           <p class = "footer__content__text">social-links</p>
+           <a class = "footer__content__link" href = "facebook.com"><img src = "images/facebook.jpg" alt = "facebook logo" width ="25"></a>
+           <a class = "footer__content__link" href = "instagram.com"><img src = "images/instagram.jpg" alt = "instagram logo" width="25"></a> 
+           <a href = "linkedin.com"><img src = "images/linkedin.jpg" alt = "linkedin logo" width = "25"></a>
+       </section>
+       <section class = "footer__content">
+           <p class = "footer__content__text"> More info: </p>
+           <a class = "text-decoration-none text-primary" href = "contact.html"> Contact</a>
+           <a class = "text-decoration-none text-primary" href = "about_us.html"> About us</a>
+       </section>
+   </footer>
+</body>
 </html>
-
