@@ -35,11 +35,17 @@ export class CountryInfoService {
   }
   saveFile(@Body() textDescription, fileData: FileImageInput) {
     const imagearr = this.parseImages(fileData);
+    const profimage = imagearr.shift();
+    const additional_image = []
+    for (let i = 0; i < 3; i++){
+      additional_image.push(imagearr.shift())
+    }
     const something = {
       text: textDescription.text,
       country: textDescription.country,
-      profilefilename: imagearr.shift(),
-      additional_pics: imagearr.join(','),
+      profilefilename: profimage,
+      additional_pics: additional_image.join(','),
+      food_images: imagearr.join(',')
     };
     return this.data.save(something);
   }
@@ -54,5 +60,8 @@ export class CountryInfoService {
 
   update(@Body() text: UpdateFile, id: number) {
       return this.data.update(id, text);
+  }
+  deleteCountryInfo(id: number){
+    return this.data.delete(id);
   }
 }

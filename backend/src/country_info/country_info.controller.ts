@@ -3,6 +3,7 @@ import {
   Post,
   Get,
   Patch,
+  Delete,
 } from '@nestjs/common/decorators/http/request-mapping.decorator';
 import {
   Body,
@@ -18,17 +19,6 @@ import { FileImageInput } from './dto/FileImageInput.dto';
 import { UpdateFile } from './dto/UpdateFile.dto';
 import { CountryData } from './entity/CountryData.entity';
 
-export const storage = {
-  storage: diskStorage({
-    destination: './uploads/images',
-    filename: (req, file, callback) => {
-      const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
-      const ext = extname(file.originalname);
-      const filename = `${file.originalname}-${uniqueSuffix}${ext}`;
-      callback(null, filename);
-    },
-  }),
-};
 export const imageStorage = {
   storage: diskStorage({
     destination: './uploads/images/additionalImages',
@@ -50,7 +40,7 @@ export class CountryInfoController {
   }
 
   @Post()
-  @UseInterceptors(FilesInterceptor('images', 5, imageStorage))
+  @UseInterceptors(FilesInterceptor('images', 7, imageStorage))
   handleProfileDescriptionUpload(
     @UploadedFiles() images,
     @Body() textDescription,
@@ -63,4 +53,9 @@ export class CountryInfoController {
   update(@Body() userData: UpdateFile, @Param() id: number) {
     return this.countryService.update(userData, id);
   }
+  @Delete(':id')
+  deleteCountry(@Param() id: number){
+    return this.countryService.deleteCountryInfo(id);
+  }
+
 }

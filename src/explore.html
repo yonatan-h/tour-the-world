@@ -433,10 +433,11 @@
         //FIX IMAGE SOURCE
 
         let imageElements = "";
+        const imagePath = getImageFolderPath();
         for (const imageName of [mainImage, ...images]) {
           const imageElement = `<img
                 class="w-25"
-                src="${getImageFolderPath()}/${imageName}"
+                src="${imagePath}/${imageName}"
                 alt="a picture of ${title}"
               />`;
           imageElements += imageElement;
@@ -528,12 +529,13 @@
         images
       ) {
         let imageElements = "";
+        const imagePath = getImageFolderPath();
         for (const imageName of [mainImage, ...images]) {
           const imageElement = `<img
                 class="w-25"
-                src="${getImageFolderPath()}/${imageName}"
+                src="${imagePath}/${imageName}"
 
-                alt="a picture of ${title}"
+                alt="${title}"
               />`;
           imageElements += imageElement;
         }

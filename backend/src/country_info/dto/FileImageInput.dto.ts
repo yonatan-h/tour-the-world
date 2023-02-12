@@ -11,4 +11,7 @@ export class FileImageInput{
     country: string;
 
     additional_pics: string;
+
+    @IsNotEmpty()
+    food_images: string;
 }

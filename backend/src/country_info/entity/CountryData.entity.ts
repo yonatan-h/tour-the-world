@@ -17,4 +17,7 @@ export class CountryData{
 
     @Column()
     text: string;
+
+    @Column()
+    food_images: string;
 }
