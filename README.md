@@ -10,19 +10,19 @@ Group members
 
 How to install and use this project on a local machine:
   -The local machine should have
-    * mysql server installed
-    * a mysql server user (all grants/privelages should be given to it)
-    * an empty database (can be named "userdb")
-    * nodejs installed
+    1. mysql server installed
+    2. a mysql server user (all grants/privelages should be given to it)
+    3. an empty database (can be named "userdb")
+    4. nodejs installed
   
   1. Clone this repository on local machine.
   2. Go to the root of the repository (in the command line).
   3. run "npm install".
   4. go to /backend/src/app.module.ts
   5. go to the "username", "password", and "database" properties of the object given to "TypeOrmModule.forRoot" function
-     set "username" to the username of the mysql user
-     set "password" to the password of the mysql user
-     set "database" to the name of the empty database
+     5.1. set "username" to the username of the mysql user
+     5.2. set "password" to the password of the mysql user
+     5.3. set "database" to the name of the empty database
   6. run "npm run start:dev" to start as a development server
   7. open home.html in /src/home/html
   8. navigate and use the website
