@@ -4,33 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="bootstrap/js/bootstrap.js" defer></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
 
     <link
       rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
+      href="https://fonts.googleapis.com/css?family=Sofia|Oswald"
     />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?Montserrat|Ubuntu"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
+    <script src="bootstrap/js/bootstrap.js" defer></script>
     <title>About us</title>
     <style>
       /*font-size decreasing cannot be done by bootstrap so I used @media*/
@@ -50,56 +30,62 @@
       }
     </style>
   </head>
-  <body style="font-family: Montserrat Ubuntu">
+  <body>
     <nav
-      class="navbar d-flex justify-content-center navbar-expand-lg navbar-dark bg-dark"
+    class="navbar d-flex justify-content-center navbar-expand-lg navbar-dark bg-dark"
+  >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarToggledDiv"
     >
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarToggledDiv"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarToggledDiv">
-        <ul class="navbar-nav w-100">
-          <li class="nav-item mx-auto">
-            <a class="nav-link text-primary" href="home.html">Home</a>
-          </li>
-          <li class="nav-item mx-auto">
-            <a class="nav-link text-primary" href="explore.html">Explore</a>
-          </li>
-          <li class="nav-item mx-auto">
-            <a class="nav-link text-primary" href="food_and_drinks.html"
-              >Food and Drinks</a
-            >
-          </li>
-          <li class="nav-item mx-auto">
-            <a class="nav-link text-primary" href="accommodations.html"
-              >Accommodations</a
-            >
-          </li>
-          <li class="nav-item mx-auto">
-            <a class="nav-link text-primary" href="contact.html">Contact</a>
-          </li>
-          <li class="nav-item mx-auto">
-            <a class="nav-link text-primary" href="about_us.html">About</a>
-          </li>
-          <li class="nav-item justify-self-end">
-            <a class="nav-link btn btn-success" role="button" href="login.html"
-              >sign in</a
-            >
-          </li>
-        </ul>
-      </div>
-    </nav>
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarToggledDiv">
+      <ul class="navbar-nav w-100">
+        <li class="nav-item mx-auto">
+          <a class="nav-link text-light" href="home.html">Home</a>
+        </li>
+        <li class="nav-item mx-auto">
+          <a class="nav-link text-light" href="explore.html">Explore</a>
+        </li>
+        <li class="nav-item mx-auto">
+          <a class="nav-link text-light" href="food_and_drinks.html"
+            >Food and Drinks</a
+          >
+        </li>
+        <li class="nav-item mx-auto">
+          <a class="nav-link text-light" href="accommodations.html"
+            >Accommodations</a
+          >
+        </li>
+        <li class="nav-item mx-auto">
+          <a class="nav-link text-light" href="contact.html">Contact</a>
+        </li>
+        <li class="nav-item mx-auto">
+          <a class="nav-link text-light" href="about_us.html">About</a>
+        </li>
+        <li class="nav-item mx-auto my-1">
+          <a class="nav-link btn btn-primary text-white" role="button" href="login.html"
+            >sign in</a
+          >
+        </li>
+        <li class="nav-item mx-auto my-1">
+          <a class="nav-link btn btn-warning text-white" role="button" href="logout.html"
+            >log out</a
+          >
+        </li>
+      </ul>
+    </div>
+  </nav>
+
     <header class="text-center text-light my-5">
       <h1 class="header__title">About Us</h1>
     </header>
     <section class="text-center">
       <img
-        class="w-50"
+        class="w-50 rounded-5"
         src="images/place.jpg"
         alt="A lake with surrounding area of green"
       />
@@ -124,34 +110,21 @@
         dignissimos possimus totam quo tempore!
       </p>
     </section>
-    <hr />
-    <footer class="footer d-flex justify-content-between bg-dark">
-      <section class="footer__content">
-        <a class="text-decoration-none text-white" href="explore.html"
-          >our services</a
-        >
+    <footer class = "footer d-flex justify-content-between bg-dark">
+      <section class = "footer__content">
+        <a class = "text-decoration-none text-white" href = "explore.html">our services</a> 
       </section>
-      <section class="footer__content">
-        <p class="footer__content__text text-white">social-links</p>
-        <a class="footer__content__link" href="facebook.com"
-          ><img src="images/facebook.jpg" alt="facebook logo" width="25"
-        /></a>
-        <a class="footer__content__link" href="instagram.com"
-          ><img src="images/instagram.jpg" alt="instagram logo" width="25"
-        /></a>
-        <a href="linkedin.com"
-          ><img src="images/linkedin.jpg" alt="linkedin logo" width="25"
-        /></a>
+      <section class = "footer__content">
+          <p class = "footer__content__text">social-links</p>
+          <a class = "footer__content__link" href = "facebook.com"><img src = "images/facebook.jpg" alt = "facebook logo" width ="25"></a>
+          <a class = "footer__content__link" href = "instagram.com"><img src = "images/instagram.jpg" alt = "instagram logo" width="25"></a> 
+          <a href = "linkedin.com"><img src = "images/linkedin.jpg" alt = "linkedin logo" width = "25"></a>
       </section>
-      <section class="footer__content">
-        <p class="footer__content__text text-white">More info:</p>
-        <a class="text-decoration-none text-white" href="contact.html">
-          Contact</a
-        >
-        <a class="text-decoration-none text-white" href="about_us.html">
-          About us</a
-        >
+      <section class = "footer__content">
+          <p class = "footer__content__text text-white"> More info: </p>
+          <a class = "text-decoration-none text-primary" href = "contact.html"> Contact</a>
+          <a class = "text-decoration-none text-primary" href = "about_us.html"> About us</a>
       </section>
-    </footer>
+  </footer>
   </body>
 </html>

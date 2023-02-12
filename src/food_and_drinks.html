@@ -17,55 +17,80 @@
     <title>Food and Drinks</title>
     <style>
       /*font-size decreasing cannot be done by bootstrap so I used @media*/
-      @media screen and (max-width: 768px) {
-        body {
-          font-size: 0.8rem;
-        }
-        ul {
-          font-size: 0.6rem;
-        }
+      @media  screen and (max-width:768px) {
+          body{
+              font-size: 0.8rem; 
+          }
+          ul{
+              font-size: 0.6rem;
+          }
       }
       /*I couldn't achieve putting a background images using bootstrap so I added a bakground images using bootstrap*/
-      .top-content {
-        background-image: url(images/foods.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        position: relative;
-        bottom: 20px;
+      .top-content{
+          background-image: url(images/foods.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+          /* position: relative;
+          bottom: 0px; */
       }
-      .food-info__content {
-        display: none;
+      .food-info__content{
+          display: none;
       }
+  </style>
     </style>
   </head>
   <body>
-    <nav>
-      <ul
-        class="list-unstyled d-flex justify-content-around bg-dark text-light py-4"
+    <nav
+      class="navbar d-flex justify-content-center navbar-expand-lg navbar-dark bg-dark"
+    >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarToggledDiv"
       >
-        <li class="nav-item px-auto">
-          <a class="nav-link" href="home.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="explore.html">Explore</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="food_and_drinks.html">Food and Drinks</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="accommodations.html">Accommodations</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contact.html">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="about_us.html">About</a>
-        </li>
-      </ul>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarToggledDiv">
+        <ul class="navbar-nav w-100">
+          <li class="nav-item mx-auto">
+            <a class="nav-link text-light" href="home.html">Home</a>
+          </li>
+          <li class="nav-item mx-auto">
+            <a class="nav-link text-light" href="explore.html">Explore</a>
+          </li>
+          <li class="nav-item mx-auto">
+            <a class="nav-link text-light" href="food_and_drinks.html"
+              >Food and Drinks</a
+            >
+          </li>
+          <li class="nav-item mx-auto">
+            <a class="nav-link text-light" href="accommodations.html"
+              >Accommodations</a
+            >
+          </li>
+          <li class="nav-item mx-auto">
+            <a class="nav-link text-light" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item mx-auto">
+            <a class="nav-link text-light" href="about_us.html">About</a>
+          </li>
+          <li class="nav-item mx-auto my-1">
+            <a class="nav-link btn bg-primary text-white" role="button" href="login.html"
+              >sign in</a
+            >
+          </li>
+          <li class="nav-item mx-auto my-1">
+            <a class="nav-link btn btn-warning text-white" role="button" href="logout.html"
+              >log out</a
+            >
+          </li>
+        </ul>
+      </div>
     </nav>
     <div class="top-content">
       <h1 class="text-center text-white py-5">Food and Drinks</h1>
-      <div class="py-5">
+      <div class="py-5 my-5">
         <div class="row gy-2 align-items-center justify-content-center w-100">
           <div class="col-12 col-lg-6">
             <input
@@ -273,13 +298,15 @@
         for (const imageName of foodImages) {
           const li = `
             <li class="row justify-content-center">
-              <div class="col-lg-6">
-
+              <div class="col-lg-6 my-2">
+                <p>Food_name</p>
                 <img
                   src="${getImageFolderPath()}/${imageName}"
                   alt="food"
-                  class="img-fluid w-100"
+                  class="img-fluid rounded-5"
+                  width="200"
                 />
+                <p>Category: Foods</p>
               </div>
           </li>`;
           foodLis += li;

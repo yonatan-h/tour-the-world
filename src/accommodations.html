@@ -4,12 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+    <script src="searchBar.js"></script>
+    <script src="bootstrap/js/bootstrap.js" defer></script>
     <style>
       /*font-size decreasing cannot be done by bootstrap so I used @media*/
       @media screen and (max-width: 768px) {
@@ -25,79 +22,66 @@
         background-image: url(images/hotel.jpg);
         background-size: cover;
         background-repeat: no-repeat;
-        position: relative;
-        bottom: 20px;
+        /* position: relative;
+        bottom: 20px; */
       }
       .card {
         display: none;
       }
     </style>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?Montserrat|Ubuntu"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
-    <script src="searchBar.js"></script>
+
     <title>Accommodations</title>
   </head>
   <body>
     <nav
-      class="navbar d-flex justify-content-center navbar-expand-lg navbar-dark bg-dark"
+    class="navbar d-flex justify-content-center navbar-expand-lg navbar-dark bg-dark"
+  >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarToggledDiv"
     >
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarToggledDiv"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarToggledDiv">
-        <ul class="navbar-nav w-100">
-          <li class="nav-item mx-auto">
-            <a class="nav-link text-primary" href="home.html">Home</a>
-          </li>
-          <li class="nav-item mx-auto">
-            <a class="nav-link text-primary" href="explore.html">Explore</a>
-          </li>
-          <li class="nav-item mx-auto">
-            <a class="nav-link text-primary" href="food_and_drinks.html"
-              >Food and Drinks</a
-            >
-          </li>
-          <li class="nav-item mx-auto">
-            <a class="nav-link text-primary" href="accommodations.html"
-              >Accommodations</a
-            >
-          </li>
-          <li class="nav-item mx-auto">
-            <a class="nav-link text-primary" href="contact.html">Contact</a>
-          </li>
-          <li class="nav-item mx-auto">
-            <a class="nav-link text-primary" href="about_us.html">About</a>
-          </li>
-          <li class="nav-item justify-self-end">
-            <a class="nav-link btn btn-success" role="button" href="login.html"
-              >sign in</a
-            >
-          </li>
-        </ul>
-      </div>
-    </nav>
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarToggledDiv">
+      <ul class="navbar-nav w-100">
+        <li class="nav-item mx-auto">
+          <a class="nav-link text-light" href="home.html">Home</a>
+        </li>
+        <li class="nav-item mx-auto">
+          <a class="nav-link text-light" href="explore.html">Explore</a>
+        </li>
+        <li class="nav-item mx-auto">
+          <a class="nav-link text-light" href="food_and_drinks.html"
+            >Food and Drinks</a
+          >
+        </li>
+        <li class="nav-item mx-auto">
+          <a class="nav-link text-light" href="accommodations.html"
+            >Accommodations</a
+          >
+        </li>
+        <li class="nav-item mx-auto">
+          <a class="nav-link text-light" href="contact.html">Contact</a>
+        </li>
+        <li class="nav-item mx-auto">
+          <a class="nav-link text-light" href="about_us.html">About</a>
+        </li>
+        <li class="nav-item mx-auto my-1">
+          <a class="nav-link btn bg-primary text-white" role="button" href="login.html"
+            >sign in</a
+          >
+        </li>
+        <li class="nav-item mx-auto my-1">
+          <a class="nav-link btn btn-warning text-white" role="button" href="logout.html"
+            >log out</a
+          >
+        </li>
+      </ul>
+    </div>
+  </nav>
+
     <div class="top-content">
       <h1 class="text-center text-dark py-5">Accommodations</h1>
       <div class="py-5">
