@@ -11,8 +11,7 @@ buttons.forEach(function (button) {
     );
   });
 });
- <script>
-      function amLoggedIn() {
+function amLoggedIn() {
         return localStorage.getItem("jwt-token") !== null;
       }
 
@@ -487,4 +486,5 @@ buttons.forEach(function (button) {
         );
         await loadCountries();
       }
-    </script>
+
+      
