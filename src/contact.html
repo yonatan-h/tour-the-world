@@ -30,6 +30,23 @@
       crossorigin="anonymous"
     ></script>
     <title>Contact</title>
+    <style>
+        /*font-size decreasing cannot be done by bootstrap so I used @media*/
+        @media screen and (max-width:768px){
+            body{
+                font-size: 0.8rem;
+            }
+            ul{
+                font-size: 0.6rem;
+            }
+        }
+        /*I couldn't achieve putting a background images using bootstrap so I added a bakground images using bootstrap*/
+        body{
+            background-image: url("images/city.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
   </head>
   <body>
     <nav
@@ -74,52 +91,46 @@
         </ul>
       </div>
     </nav>
-    <header>
-      <h1>Subscribe to our email so you won't miss out!</h1>
+    <header class ="text-center py-5">
+        <h1 class="header__title">Subscribe to our email so you won't miss out!</h1>
     </header>
-    <label for="input">
-      <img src="images/mail.jpg" alt="search icon" width="10" />
-    </label>
-    <input placeholder="Enter your email" id="input" />
-    <button>Subscribe</button>
-    <section>
-      <p>You can also find us at:</p>
-      <ul>
-        <li>Telegram</li>
-        <li>Instagram</li>
-        <li>Facebook</li>
-        <li>Linkedin</li>
-        <li>Discord</li>
-      </ul>
+    <div>
+      <form class="py-5">
+          <div class="row gy-2 align-items-center justify-content-center w-100">
+              <div class="col-12 col-lg-6">
+                  <input type="email" class="form-control py-3 rounded-5" placeholder="Enter your email" required>
+              </div>
+              <div class="col-6 col-lg-2">
+                  <button class="btn btn-outline-light w-100 rounded-5">subscribe</button>
+              </div>
+          </div>
+        </form>
+  </div>
+    <section class = "py-5 text-center">
+        <p class="contact-information__text">You can also find us at: </p>
+        <ul class="list-unstyled">
+            <li class="contact-information__list__item">Telegram</li>
+            <li class="contact-information__list__item">Instagram</li>
+            <li class="contact-information__list__item">Facebook</li>
+            <li class="contact-information__list__item">Linkedin</li>
+            <li class="contact-information__list__item">Discord</li>
+        </ul>
     </section>
-    <hr />
-    <footer class="footer d-flex justify-content-between bg-dark">
-      <section class="footer__content">
-        <a class="text-decoration-none text-white" href="explore.html"
-          >our services</a
-        >
-      </section>
-      <section class="footer__content">
-        <p class="footer__content__text">social-links</p>
-        <a class="footer__content__link" href="facebook.com"
-          ><img src="images/facebook.jpg" alt="facebook logo" width="25"
-        /></a>
-        <a class="footer__content__link" href="instagram.com"
-          ><img src="images/instagram.jpg" alt="instagram logo" width="25"
-        /></a>
-        <a href="linkedin.com"
-          ><img src="images/linkedin.jpg" alt="linkedin logo" width="25"
-        /></a>
-      </section>
-      <section class="footer__content">
-        <p class="footer__content__text">More info:</p>
-        <a class="text-decoration-none text-white" href="contact.html">
-          Contact</a
-        >
-        <a class="text-decoration-none text-white" href="about_us.html">
-          About us</a
-        >
-      </section>
+    <footer class = "footer d-flex justify-content-between bg-dark">
+        <section class = "footer__content">
+          <a class = "text-decoration-none text-white" href = "explore.html">our services</a> 
+        </section>
+        <section class = "text-light">
+            <p class = "footer__content__text">social-links</p>
+            <a class = "footer__content__link" href = "facebook.com"><img src = "images/facebook.jpg" alt = "facebook logo" width ="25"></a>
+            <a class = "footer__content__link" href = "instagram.com"><img src = "images/instagram.jpg" alt = "instagram logo" width="25"></a> 
+            <a href = "linkedin.com"><img src = "images/linkedin.jpg" alt = "linkedin logo" width = "25"></a>
+        </section>
+        <section class = "text-light">
+            <p class = "footer__content__text"> More info: </p>
+            <a class = "text-decoration-none text-white" href = "contact.html"> Contact</a>
+            <a class = "text-decoration-none text-white" href = "about_us.html"> About us</a>
+        </section>
     </footer>
-  </body>
+</body>
 </html>
