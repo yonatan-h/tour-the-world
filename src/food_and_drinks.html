@@ -13,7 +13,7 @@
     <script src="bootstrap/js/bootstrap.js" defer></script>
 
     <!--I Couldn't achieve a search effect like I did on vanilla js using bootstrap so I reverted to vanilla js-->
-    <script src="searchBar.js"></script>
+    <script src="searchBar.js" defer></script>
     <title>Food and Drinks</title>
     <style>
       /*font-size decreasing cannot be done by bootstrap so I used @media*/
@@ -73,6 +73,7 @@
               class="form-control py-3 rounded-5 food-search-input-js"
               placeholder="what countries food would you like to see"
               id="search"
+              value="zambuza"
             />
           </div>
           <div class="col-6 col-lg-2">
@@ -85,7 +86,8 @@
       </div>
     </div>
     <section class="text-center" role="food information">
-      <section class="foods-js">
+      <section class="foods-js"></section>
+      <section>
         <ul class="food-info__content list-unstyled" id="Ethiopia">
           <h2>Ethiopia</h2>
           <hr />
@@ -227,28 +229,34 @@
 
       foodSearchBtn.addEventListener("click", async () => {
         //if the front end already got the results, do nothing
-        const frontAnswered = showSearchedValue();
-        if (frontAnswered) return;
+        const nonDbAnswer = showSearchedValue();
+        if (nonDbAnswer) {
+          foodsSection.innerHTML = ""; //remove whats inside
+          return;
+        } else {
+          hideNonDb();
+        }
 
         const countryName = foodSearchInput.value;
         const lowerCase = countryName.toLowerCase();
-        const countryFoods = await getCountryFoods(lowerCase);
+        const foodImages = await getFoodsImages(lowerCase);
 
-        if (countryFoods) {
-          foodsSection.innerHTML = ""; //remove whats inside
-          foodsSection.appendChild(buildFoodsSection(countryFoods));
+        if (foodImages) {
+          foodsSection.appendChild(buildFoodsSection(countryName, foodImages));
         } else {
           alert(`There are no search results for ${countryName}`);
         }
       });
 
-      async function getCountryFoods(countryName) {
-        const result = await fetch(`http://localhost:3000/`); //FIX THIS
+      async function getFoodsImages(countryName) {
+        const result = await fetch(
+          `http://localhost:3000/country-info/${countryName}`
+        ); //FIX THIS
 
-        const data = result.json();
-        const foods = data.foods; //FIX THIS
-        if (foods) {
-          return foods.map(formatFood);
+        const country = await result.json();
+        if (country.food_images) {
+          const foodImages = country.food_images.split(",");
+          return foodImages;
         } else {
           return false;
         }
@@ -259,31 +267,24 @@
         return path;
       }
 
-      function formatFood(originalFood) {
-        const name = originalFood.name; //FIX THIS
-        const imageName = originalFood.imageName; //FIX THIS
-        const category = originalFood.category; //FIX THIS
-        return { name, imageName, category };
-      }
-
-      function buildFoodsSection(countryName, foods) {
-        const foodLis = "";
-        for (const food of foods) {
-          const { name, imageName, category } = food;
+      function buildFoodsSection(countryName, foodImages) {
+        let foodLis = "";
+        for (const imageName of foodImages) {
           const li = `
-            <li>
-              <p>${name}</p>
-              <img
-                src="${getImageFolderPath()}/${imageName}"
-                alt="${name}"
-                width="200"
-              />
-              <p>Category: ${category}</p>
+            <li class="row justify-content-center">
+              <div class="col-lg-6">
+
+                <img
+                  src="${getImageFolderPath()}/${imageName}"
+                  alt="food"
+                  class="img-fluid w-100"
+                />
+              </div>
           </li>`;
           foodLis += li;
         }
 
-        const ul = `
+        const ulString = `
           <ul>
             <h2>${countryName}</h2>
             <hr />
@@ -291,9 +292,9 @@
           </ul>`;
 
         const domParser = new DOMParser();
-        const realUl = domParser.parseFromString(divString, "text/html").body
+        const ul = domParser.parseFromString(ulString, "text/html").body
           .firstElementChild;
-        return realUl;
+        return ul;
       }
     </script>
   </body>

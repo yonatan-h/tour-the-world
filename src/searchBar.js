@@ -20,3 +20,9 @@ function showSearchedValue() {
   }
   return true;
 }
+
+function hideNonDb() {
+  document.getElementById("Ethiopia").style.display = "none";
+  document.getElementById("Bali").style.display = "none";
+  document.getElementById("Brazil").style.display = "none";
+}

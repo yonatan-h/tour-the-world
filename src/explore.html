@@ -24,6 +24,13 @@
           font-size: 0.6rem;
         }
       }
+
+      .country-add-prompt {
+        border: 5px dashed white;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+      }
+
       /*I couldn't achieve putting a background images using bootstrap so I added a bakground images using bootstrap*/
       body {
         background-image: url("images/cityBackground.jpg");
@@ -267,10 +274,10 @@
     </div>
     <div class="countries-js"></div>
 
-    <div class="container bg-dark text-light my-5">
-      <div class="p-2 text-center">
-        <h2>Is there a country we haven't mentioned?</h2>
-        <a href="./add_country.html" class="link-light">Add a new country</a>
+    <div class="container my-5">
+      <div class="p-5 text-center rounded country-add-prompt">
+        <h2 class="text-light">Is there a country we haven't mentioned?</h2>
+        <a href="./add_country.html" class="btn btn-light">Add a new country</a>
       </div>
     </div>
 
@@ -523,18 +530,14 @@
     </script>
 
     <script>
-      loadCountries();
-
-      function amLoggedIn() {
-        return localStorage.getItem("jwt-token") !== null;
-      }
-
       async function getCountries() {
         const getCountriesUrl = "http://localhost:3000/country-info"; //FIX THIS -------------
         const result = await fetch(getCountriesUrl);
         const data = result.json();
         return data;
       }
+
+      loadCountries();
 
       async function loadCountries() {
         const countriesContainer = document.querySelector(".countries-js");
@@ -546,7 +549,7 @@
           const title = country.country; //FIX THIS -------------
           const description = country.text; //FIX THIS -------------
           const mainImage = country.profilefilename; //FIX THIS ------
-          const images = country.additional_pics; //FIX THIS -------------
+          const images = country.additional_pics; //first three are country
 
           let countryCard;
           if (amLoggedIn()) {
@@ -577,11 +580,6 @@
         return path;
       }
 
-      function adjustHeight(textArea) {
-        textArea.style.height = "";
-        textArea.style.height = this.scrollHeight + "px";
-      }
-
       function crudCountryCard(
         countryId,
         title,
@@ -592,7 +590,7 @@
         //FIX IMAGE SOURCE
 
         let imageElements = "";
-        for (const imageName of [mainImage, ...images]) {
+        for (const imageName of images) {
           const imageElement = `<img
                 class="w-25"
                 src="${getImageFolderPath()}/${imageName}"
@@ -635,18 +633,18 @@
             <div class="show-country-js">
               <p class="card__hidden-content__text">${description}</p>
               <button class="edit-country-btn-js">Edit</button>
-              <button class="delete-country-btn-js">Delete</button>
             </div>
 
             <div class="edit-country-js">
               <textarea class="card__hidden-content__text" id="${textAreaId}">${description}</textarea>
               <div>
                 <button onclick="updateCountry('${countryId}', '${textAreaId}')" >Save</button>
-                <button onclick="deleteCountry('${countryId}')">Delete</button>
+                <button onclick="deleteCountry('${countryId}')" >Delete</button>
+
                 <button class="cancel-edit-country-btn-js">Cancel</button>
               </div>
             </div>
-            
+
             <div class="py-3">
               ${imageElements}
             </div>
@@ -680,6 +678,21 @@
         return div;
       }
 
+      async function deleteCountry(countryId) {
+        const jwtToken = localStorage.getItem("jwt-token");
+        const authorizationHeader = "Bearer " + jwtToken;
+
+        await fetch(`http://localhost:3000/country-info/${countryId}`, {
+          //FIX THIS ----------------
+          method: "DELETE",
+          headers: {
+            Authorization: authorizationHeader,
+          },
+        });
+
+        await loadCountries();
+      }
+
       function readOnlyCountryCard(
         countryId,
         title,
@@ -688,8 +701,7 @@
         images
       ) {
         let imageElements = "";
-        for (const imageName of [mainImage, ...images]) {
-          console.log(imageName);
+        for (const imageName of images) {
           const imageElement = `<img
                 class="w-25"
                 src="${getImageFolderPath()}/${imageName}"
@@ -770,22 +782,6 @@
             body: body,
           }
         );
-        await loadCountries();
-      }
-      getImage;
-
-      async function deleteCountry(countryId) {
-        const jwtToken = localStorage.getItem("jwt-token");
-        const authorizationHeader = "Bearer " + jwtToken;
-
-        await fetch(`http://localhost:3000/country-info/${countryId}`, {
-          //FIX THIS ----------------
-          method: "DELETE",
-          headers: {
-            Authorization: authorizationHeader,
-          },
-        });
-
         await loadCountries();
       }
     </script>
