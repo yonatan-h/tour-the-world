@@ -4,205 +4,299 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?Montserrat|Ubuntu"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
 
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Sofia|Oswald"
+    />
+    <script src="bootstrap/js/bootstrap.js" defer></script>
+
+    <!--I Couldn't achieve a search effect like I did on vanilla js using bootstrap so I reverted to vanilla js-->
+    <script src="searchBar.js" defer></script>
     <title>Food and Drinks</title>
+    <style>
+      /*font-size decreasing cannot be done by bootstrap so I used @media*/
+      @media screen and (max-width: 768px) {
+        body {
+          font-size: 0.8rem;
+        }
+        ul {
+          font-size: 0.6rem;
+        }
+      }
+      /*I couldn't achieve putting a background images using bootstrap so I added a bakground images using bootstrap*/
+      .top-content {
+        background-image: url(images/foods.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        bottom: 20px;
+      }
+      .food-info__content {
+        display: none;
+      }
+    </style>
   </head>
   <body>
-    <nav
-      class="navbar d-flex justify-content-center navbar-expand-lg navbar-dark bg-dark"
-    >
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarToggledDiv"
+    <nav>
+      <ul
+        class="list-unstyled d-flex justify-content-around bg-dark text-light py-4"
       >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarToggledDiv">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="home.html">Home</a>
+        <li class="nav-item px-auto">
+          <a class="nav-link" href="home.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="explore.html">Explore</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="food_and_drinks.html">Food and Drinks</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="accommodations.html">Accommodations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about_us.html">About</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="top-content">
+      <h1 class="text-center text-white py-5">Food and Drinks</h1>
+      <div class="py-5">
+        <div class="row gy-2 align-items-center justify-content-center w-100">
+          <div class="col-12 col-lg-6">
+            <input
+              type="text"
+              class="form-control py-3 rounded-5 food-search-input-js"
+              placeholder="what countries food would you like to see"
+              id="search"
+            />
+          </div>
+          <div class="col-6 col-lg-2">
+            <button class="btn btn-primary w-100 rounded-5 food-search-btn-js">
+              <!-- onclick="showSearchedValue()" -->
+              search
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="text-center" role="food information">
+      <section class="foods-js"></section>
+      <section>
+        <ul class="food-info__content list-unstyled" id="Ethiopia">
+          <h2>Ethiopia</h2>
+          <hr />
+          <li>
+            <p>kitfo</p>
+            <img
+              class="rounded-5"
+              src="images/Kitfo.jpg"
+              alt="An image of kitfo; a traditional food in Ethiopia, made from grounded raw beef meat"
+              width="200"
+            />
+            <p>Category: Foods</p>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="explore.html">Explore</a>
+          <li class="food-info__content__item">
+            <p>Tej</p>
+            <img
+              class="rounded-5"
+              src="images/tej.jpg"
+              alt="An image of a traditional alcoholic beverage in Ethiopia"
+              width="200"
+            />
+            <p>Category: Drinks</p>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="food_and_drinks.html">Food and Drinks</a>
+          <li>
+            <img
+              class="rounded-5"
+              src="images/doro_wot.jpg"
+              alt="An image of Doro wot, a traditional food in Ethiopia, made from chicken"
+              width="200"
+            />
+            <p class="food-info__content__item__text">Category: Food</p>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="accommodations.html">Accommodations</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about_us.html">About</a>
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link btn btn-primary"
-              role="button"
-              href="create_account.html"
-              >Home</a
-            >
+          <li>
+            <p>Shiro</p>
+            <img
+              class="rounded-5"
+              src="images/shiro.jpg"
+              alt="Shiro; a traditional food in Ethiopia"
+              width="200"
+            />
+            <p>Category: Foods</p>
           </li>
         </ul>
-      </div>
-    </nav>
-    <h1>Food and Drinks</h1>
-    <label for="food-search">
-      <img src="images/search.jpg" alt="search icon" width="10" />
-    </label>
-    <input
-      placeholder="What countries food would you like to see"
-      id="food-search"
-    />
-    <button>search</button>
-    <section role="food information">
-      <ul>
-        <h2>Ethiopia</h2>
-        <hr />
-        <li>
-          <p>kitfo</p>
-          <img
-            src="images/Kitfo.jpg"
-            alt="An image of kitfo; a traditional food in Ethiopia, made from grounded raw beef meat"
-            width="200"
-          />
-          <p>Category: Foods</p>
-        </li>
-        <li>
-          <p>Tej</p>
-          <img
-            src="images/tej.jpg"
-            alt="An image of a traditional alcoholic beverage in Ethiopia"
-            width="200"
-          />
-          <p>Category: Drinks</p>
-        </li>
-        <li>
-          <p>Doro wot</p>
-          <img
-            src="images/doro_wot.jpg"
-            alt="An image of Doro wot, a traditional food in Ethiopia, made from chicken"
-            width="200"
-          />
-          <p>Category: Food</p>
-        </li>
-        <li>
-          <p>Shiro</p>
-          <img
-            src="images/shiro.jpg"
-            alt="Shiro; a traditional food in Ethiopia"
-            width="200"
-          />
-          <p>Category: Foods</p>
-        </li>
-      </ul>
-      <ul>
-        <h2>Bali</h2>
-        <hr />
-        <li>
-          <p>Babi Guling</p>
-          <img
-            src="images/babi_guling.jpg"
-            alt="An image of babi guling; a traditional way of pig roast stuffed with spices found in bali"
-            width="200"
-          />
-          <p>Category: Food</p>
-        </li>
-        <li>
-          <p>Es cincau</p>
-          <img
-            src="images/Es_cincau.jpg"
-            alt=" green grass jelly drink with ice, coconut milk and syrup."
-            width="200"
-          />
-          <p>Category: Drinks</p>
-        </li>
-        <li>
-          <p>Babi Guling</p>
-          <img
-            src="images/ayam_betutu.jpg"
-            alt="dish of steamed or roasted chicken or duck"
-            width="200"
-          />
-          <p>Category: Food</p>
-        </li>
-        <li>
-          <p>Babi Guling</p>
-          <img
-            src="images/babi_guling.jpg"
-            alt="An image of babi guling; a traditional way of pig roast stuffed with spices found in bali"
-            width="200"
-          />
-          <p>Category: Food</p>
-        </li>
-      </ul>
-      <h2>Brazil</h2>
-      <hr />
-      <div>
-        <p>Feijoada</p>
-        <img
-          src="images/Feijoada.jpg"
-          alt=" A black bean and pork stew that is often served with farofa, toasted cassava "
-          width="200"
-        />
-        <p>Category: Foods</p>
-      </div>
-      <div>
-        <p>Caipirnha</p>
-        <img
-          src="images/caipirnha.jpg"
-          alt="Brazil's national cocktail, made with cachaça, sugar, and lime"
-          width="200"
-        />
-        <p>Category: Drinks</p>
-      </div>
-      <div>
-        <p>Moqueca</p>
-        <img
-          src="images/Moqueca.jpg"
-          alt="An image of Moqueca; typically made with shrimp or fish as a base."
-          width="200"
-        />
-        <p>Category: Food</p>
-      </div>
-      <div>
-        <p>Deep fried pastel</p>
-        <img
-          src="images/Pastel.jpg"
-          alt="An image of deep fried pastel"
-          width="200"
-        />
-        <p>Category: Foods</p>
-      </div>
+
+        <ul class="food-info__content list-unstyled" id="Bali">
+          <h2>Bali</h2>
+          <hr />
+          <li>
+            <p>Babi Guling</p>
+            <img
+              class="rounded-5"
+              src="images/babi_guling.jpg"
+              alt="An image of babi guling; a traditional way of pig roast stuffed with spices found in bali"
+              width="200"
+            />
+            <p>Category: Food</p>
+          </li>
+          <li>
+            <p>Es cincau</p>
+            <img
+              class="rounded-5"
+              src="images/Es_cincau.jpg"
+              alt=" green grass jelly drink with ice, coconut milk and syrup."
+              width="200"
+            />
+            <p>Category: Drinks</p>
+          </li>
+          <li>
+            <p>Babi Guling</p>
+            <img
+              class="rounded-5"
+              src="images/ayam_betutu.jpg"
+              alt="dish of steamed or roasted chicken or duck"
+              width="200"
+            />
+            <p>Category: Food</p>
+          </li>
+          <li>
+            <p>Babi Guling</p>
+            <img
+              class="rounded-5"
+              src="images/babi_guling.jpg"
+              alt="An image of babi guling; a traditional way of pig roast stuffed with spices found in bali"
+              width="200"
+            />
+            <p>Category: Food</p>
+          </li>
+        </ul>
+        <ul class="food-info__content list-unstyled" id="Brazil">
+          <h2>Brazil</h2>
+          <hr />
+          <li class="food-info__content__item">
+            <p>Feijoada</p>
+            <img
+              class="rounded-5"
+              src="images/Feijoada.jpg"
+              alt=" A black bean and pork stew that is often served with farofa, toasted cassava "
+              width="200"
+            />
+            <p class="food-info__content__item__text">Category: Foods</p>
+          </li>
+          <li>
+            <p>Caipirnha</p>
+            <img
+              class="rounded-5"
+              src="images/caipirnha.jpg"
+              alt="Brazil's national cocktail, made with cachaça, sugar, and lime"
+              width="200"
+            />
+            <p>Category: Drinks</p>
+          </li>
+          <li>
+            <p>Moqueca</p>
+            <img
+              class="rounded-5"
+              src="images/Moqueca.jpg"
+              alt="An image of Moqueca; typically made with shrimp or fish as a base."
+              width="200"
+            />
+            <p>Category: Food</p>
+          </li>
+          <li>
+            <p>Deep fried pastel</p>
+            <img
+              class="rounded-5"
+              src="images/Pastel.jpg"
+              alt="An image of deep fried pastel"
+              width="200"
+            />
+            <p>Category: Foods</p>
+          </li>
+        </ul>
+      </section>
     </section>
+    <script>
+      const foodSearchBtn = document.querySelector(".food-search-btn-js");
+      const foodSearchInput = document.querySelector(".food-search-input-js");
+      const foodsSection = document.querySelector(".foods-js");
+
+      foodSearchBtn.addEventListener("click", async () => {
+        //if the front end already got the results, do nothing
+        const nonDbAnswer = showSearchedValue();
+        if (nonDbAnswer) {
+          foodsSection.innerHTML = ""; //remove whats inside
+          return;
+        } else {
+          hideNonDb();
+        }
+
+        const countryName = foodSearchInput.value;
+        const lowerCase = countryName.toLowerCase();
+        const foodImages = await getFoodsImages(lowerCase);
+
+        if (foodImages) {
+          foodsSection.innerHTML = ""; //remove whats inside
+
+          foodsSection.appendChild(buildFoodsSection(countryName, foodImages));
+        } else {
+          alert(`There are no search results for ${countryName}`);
+        }
+      });
+
+      async function getFoodsImages(countryName) {
+        const result = await fetch(
+          `http://localhost:3000/country-info/${countryName}`
+        ); //FIX THIS
+
+        const country = await result.json();
+        if (country.food_images) {
+          const foodImages = country.food_images.split(",");
+          return foodImages;
+        } else {
+          return false;
+        }
+      }
+
+      function getImageFolderPath() {
+        const path = `../backend/uploads/images/additionalImages/`;
+        return path;
+      }
+
+      function buildFoodsSection(countryName, foodImages) {
+        let foodLis = "";
+        for (const imageName of foodImages) {
+          const li = `
+            <li class="row justify-content-center">
+              <div class="col-lg-6">
+
+                <img
+                  src="${getImageFolderPath()}/${imageName}"
+                  alt="food"
+                  class="img-fluid w-100"
+                />
+              </div>
+          </li>`;
+          foodLis += li;
+        }
+
+        const ulString = `
+          <ul>
+            <h2>${countryName}</h2>
+            <hr />
+            ${foodLis}
+          </ul>`;
+
+        const domParser = new DOMParser();
+        const ul = domParser.parseFromString(ulString, "text/html").body
+          .firstElementChild;
+        return ul;
+      }
+    </script>
   </body>
 </html>

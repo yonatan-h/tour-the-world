@@ -24,6 +24,13 @@
           font-size: 0.6rem;
         }
       }
+
+      .country-add-prompt {
+        border: 5px dashed white;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+      }
+
       /*I couldn't achieve putting a background images using bootstrap so I added a bakground images using bootstrap*/
       body {
         background-image: url("images/cityBackground.jpg");
@@ -86,7 +93,77 @@
     <header class="text-center text-light">
       <h1 class="header">Explore!</h1>
     </header>
-    <div class="countries-js">
+    <div>
+      <div class="accordion-item w-75 py-2 mx-auto">
+        <h2 class="accordion-header" id="headingOne">
+          <button
+            class="accordion-button bg-dark text-white rounded-4 p-2"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
+          >
+            <div class="d-flex justify-content-between w-100">
+              <p>Ethiopia</p>
+              <img
+                src="images/Ethiopia.jpg"
+                width="60"
+                alt="A picture of Ethiopia's siemen mountains"
+              />
+            </div>
+          </button>
+        </h2>
+        <section
+          id="collapseOne"
+          class="accordion-collapse collapse show py-3 w-75 mx-auto"
+          aria-labelledby="headingOne"
+          data-bs-parent="#dropdown"
+        >
+          <div class="accordion-body bg-info rounded-3 text-white text-center">
+            <p class="card__hidden-content__text">
+              Known for her uniqueness and diversity, Ethiopia has a lot to
+              offer. From breath-taking views and atmosphere to tasty cuisines.
+              Ethiopia is located at the heart of the horn of Africa.
+            </p>
+            <p class="card__hidden-content__text">
+              Check out Ethiopia's
+              <a
+                class="text-decoration-none text-muted"
+                href="food_and_drinks.html"
+                >Food and Drinks</a
+              >
+              section
+            </p>
+            <p class="card__hidden-content__text">
+              Temperature: Normal (20-25 degrees on average)
+            </p>
+            <p class="card__hidden-content__text">
+              Overall experience: Amazing
+            </p>
+            <p class="card__hidden-content__text">
+              Check out more from Ethiopia:
+            </p>
+            <div class="py-3">
+              <img
+                class="w-25"
+                src="images/Ethiopia1.jpg"
+                alt="A picture of a waterfall and a grassy land in Ethiopia"
+              />
+              <img
+                class="w-25"
+                src="images/Ethiopia2.jpg"
+                alt="A photo of a city in Ethiopia"
+              />
+              <img
+                class="w-25"
+                src="images/Sofumer.jpg"
+                alt="Sofumer cave in the day."
+              />
+            </div>
+          </div>
+        </section>
+      </div>
       <div class="accordion-item w-75 py-2 mx-auto">
         <h2 class="accordion-header" id="headingTwo">
           <button
@@ -115,7 +192,22 @@
               choice! With beautiful sites to explore bali offers a wide range
               of culture one will expect from indonesia.
             </p>
-
+            <p class="card__hidden-content__text">
+              Check out bali's
+              <a
+                class="text-decoration-none text-muted"
+                href="food_and_drinks.html"
+                >Food and Drinks</a
+              >
+              section
+            </p>
+            <p class="card__hidden-content__text">
+              Temperature: Tropical (27-31 degrees on average)
+            </p>
+            <p class="card__hidden-content__text">
+              Overall experience: Amazing
+            </p>
+            <p class="card__hidden-content__text">Check out more from Bali:</p>
             <div class="py-3">
               <img
                 class="w-25"
@@ -136,6 +228,80 @@
             </div>
           </div>
         </section>
+      </div>
+      <div class="accordion-item w-75 py-2 mx-auto">
+        <h2 class="accordion-header" id="headingThree">
+          <button
+            class="accordion-button bg-dark text-white rounded-4 p-2"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseThree"
+            aria-expanded="true"
+            aria-controls="collapseThree"
+          >
+            <div class="d-flex justify-content-between w-100">
+              <p>Brazil</p>
+              <img
+                src="images/brazil.jpg"
+                width="60"
+                alt="A picture of Ethiopia's siemen mountains"
+              />
+            </div>
+          </button>
+        </h2>
+        <section
+          id="collapseThree"
+          class="accordion-collapse collapse show py-3 w-75 mx-auto"
+          aria-labelledby="headingThree"
+          data-bs-parent="#dropdown"
+        >
+          <div class="accordion-body bg-info rounded-3 text-white text-center">
+            <p>
+              Known for the one and only Amazon rainforest, Brazil has a lot to
+              offer. It is the home of many legendary football players from
+              Rolandinho to Neymar. If you want to go to a place where you want
+              to dance and eat tasty dishes then brazil is the right choice.
+            </p>
+            <p>
+              Check out Brazil's
+              <a
+                class="text-decoration-none text-muted"
+                href="food_and_drinks.html"
+                >Food and Drinks</a
+              >
+              section
+            </p>
+            <p>Temperature: Normal (20-25 degrees on average)</p>
+            <p>Overall experience: Amazing</p>
+            <p>Check out more from Brazil:</p>
+            <div class="py-3">
+              <img
+                class="w-25"
+                src="images/IgazufallsBrazil.jpg"
+                alt="A waterfall in brazil"
+              />
+              <img
+                class="w-25"
+                src="images/ulun.jpg"
+                alt="A place called Pura ulun Danu Bratan in bali"
+              />
+              <img
+                class="w-25"
+                src="images/Nusaduabeach.jpg"
+                width="200"
+                alt="A drone shot photo of a beach in bali"
+              />
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="countries-js"></div>
+
+    <div class="container my-5">
+      <div class="p-5 text-center rounded country-add-prompt">
+        <h2 class="text-light">Is there a country we haven't mentioned?</h2>
+        <a href="./add_country.html" class="btn btn-light">Add a new country</a>
       </div>
     </div>
 
@@ -388,18 +554,14 @@
     </script>
 
     <script>
-      loadCountries();
-
-      function amLoggedIn() {
-        return localStorage.getItem("jwt-token") !== null;
-      }
-
       async function getCountries() {
         const getCountriesUrl = "http://localhost:3000/country-info"; //FIX THIS -------------
         const result = await fetch(getCountriesUrl);
         const data = result.json();
         return data;
       }
+
+      loadCountries();
 
       async function loadCountries() {
         const countriesContainer = document.querySelector(".countries-js");
@@ -411,7 +573,7 @@
           const title = country.country; //FIX THIS -------------
           const description = country.text; //FIX THIS -------------
           const mainImage = country.profilefilename; //FIX THIS ------
-          const images = country.additional_pics; //FIX THIS -------------
+          const images = country.additional_pics; //first three are country
 
           let countryCard;
           if (amLoggedIn()) {
@@ -438,13 +600,8 @@
       }
 
       function getImageFolderPath() {
-        const path = `../backend/uploads/images/additionalImages/`;
+        const path = `../backend/uploads/images/additionalImages`;
         return path;
-      }
-
-      function adjustHeight(textArea) {
-        textArea.style.height = "";
-        textArea.style.height = this.scrollHeight + "px";
       }
 
       function crudCountryCard(
@@ -457,11 +614,10 @@
         //FIX IMAGE SOURCE
 
         let imageElements = "";
-        const imagePath = getImageFolderPath();
-        for (const imageName of [mainImage, ...images]) {
+        for (const imageName of images) {
           const imageElement = `<img
                 class="w-25"
-                src="${imagePath}/${imageName}"
+                src="${getImageFolderPath()}/${imageName}"
                 alt="a picture of ${title}"
               />`;
           imageElements += imageElement;
@@ -501,18 +657,18 @@
             <div class="show-country-js">
               <p class="card__hidden-content__text">${description}</p>
               <button class="edit-country-btn-js">Edit</button>
-              <button class="delete-country-btn-js">Delete</button>
             </div>
 
             <div class="edit-country-js">
               <textarea class="card__hidden-content__text" id="${textAreaId}">${description}</textarea>
               <div>
                 <button onclick="updateCountry('${countryId}', '${textAreaId}')" >Save</button>
-                <button onclick="deleteCountry('${countryId}')">Delete</button>
+                <button onclick="deleteCountry('${countryId}')" >Delete</button>
+
                 <button class="cancel-edit-country-btn-js">Cancel</button>
               </div>
             </div>
-            
+
             <div class="py-3">
               ${imageElements}
             </div>
@@ -546,6 +702,21 @@
         return div;
       }
 
+      async function deleteCountry(countryId) {
+        const jwtToken = localStorage.getItem("jwt-token");
+        const authorizationHeader = "Bearer " + jwtToken;
+
+        await fetch(`http://localhost:3000/country-info/${countryId}`, {
+          //FIX THIS ----------------
+          method: "DELETE",
+          headers: {
+            Authorization: authorizationHeader,
+          },
+        });
+
+        await loadCountries();
+      }
+
       function readOnlyCountryCard(
         countryId,
         title,
@@ -554,13 +725,12 @@
         images
       ) {
         let imageElements = "";
-        const imagePath = getImageFolderPath();
-        for (const imageName of [mainImage, ...images]) {
+        for (const imageName of images) {
           const imageElement = `<img
                 class="w-25"
-                src="${imagePath}/${imageName}"
+                src="${getImageFolderPath()}/${imageName}"
 
-                alt="${title}"
+                alt="a picture of ${title}"
               />`;
           imageElements += imageElement;
         }
@@ -636,21 +806,6 @@
             body: body,
           }
         );
-        await loadCountries();
-      }
-
-      async function deleteCountry(countryId) {
-        const jwtToken = localStorage.getItem("jwt-token");
-        const authorizationHeader = "Bearer " + jwtToken;
-
-        await fetch(`http://localhost:3000/country-info/${countryId}`, {
-          //FIX THIS ----------------
-          method: "DELETE",
-          headers: {
-            Authorization: authorizationHeader,
-          },
-        });
-
         await loadCountries();
       }
     </script>

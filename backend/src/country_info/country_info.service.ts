@@ -36,16 +36,16 @@ export class CountryInfoService {
   saveFile(@Body() textDescription, fileData: FileImageInput) {
     const imagearr = this.parseImages(fileData);
     const profimage = imagearr.shift();
-    const additional_image = []
-    for (let i = 0; i < 3; i++){
-      additional_image.push(imagearr.shift())
+    const additional_image = [];
+    for (let i = 0; i < 3; i++) {
+      additional_image.push(imagearr.shift());
     }
     const something = {
       text: textDescription.text,
       country: textDescription.country,
       profilefilename: profimage,
       additional_pics: additional_image.join(','),
-      food_images: imagearr.join(',')
+      food_images: imagearr.join(','),
     };
     return this.data.save(something);
   }
@@ -58,13 +58,14 @@ export class CountryInfoService {
     return imageName;
   }
 
-  async getCountryByName(country: string){
-    return this.data.findOne({ where: { country }});
+  async getCountryByName(country: string) {
+    //CHANGED
+    return (await this.data.findOne({ where: { country } })) ?? {};
   }
   update(@Body() text: UpdateFile, id: number) {
-      return this.data.update(id, text);
+    return this.data.update(id, text);
   }
-  deleteCountryInfo(id: number){
+  deleteCountryInfo(id: number) {
     return this.data.delete(id);
   }
 }
