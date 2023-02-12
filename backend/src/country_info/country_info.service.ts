@@ -30,11 +30,10 @@ export class CountryInfoService {
         text: country.text,
       };
     });
-
+    console.log(withSplittedImages);
     return withSplittedImages;
   }
   saveFile(@Body() textDescription, fileData: FileImageInput) {
-    console.log(fileData);
     const imagearr = this.parseImages(fileData);
     const something = {
       text: textDescription.text,
@@ -54,7 +53,6 @@ export class CountryInfoService {
   }
 
   update(@Body() text: UpdateFile, id: number) {
-    console.log(text);
-    return this.data.update(id, text);
+      return this.data.update(id, text);
   }
 }
