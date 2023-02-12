@@ -13,30 +13,28 @@
     <script src="bootstrap/js/bootstrap.js" defer></script>
 
     <!--I Couldn't achieve a search effect like I did on vanilla js using bootstrap so I reverted to vanilla js-->
-    <script src="searchBar.js" defer></script>
     <title>Food and Drinks</title>
     <style>
       /*font-size decreasing cannot be done by bootstrap so I used @media*/
-      @media  screen and (max-width:768px) {
-          body{
-              font-size: 0.8rem; 
-          }
-          ul{
-              font-size: 0.6rem;
-          }
+      @media screen and (max-width: 768px) {
+        body {
+          font-size: 0.8rem;
+        }
+        ul {
+          font-size: 0.6rem;
+        }
       }
       /*I couldn't achieve putting a background images using bootstrap so I added a bakground images using bootstrap*/
-      .top-content{
-          background-image: url(images/foods.jpg);
-          background-size: cover;
-          background-repeat: no-repeat;
-          /* position: relative;
+      .top-content {
+        background-image: url(images/foods.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        /* position: relative;
           bottom: 0px; */
       }
-      .food-info__content{
-          display: none;
+      .food-info__content {
+        display: none;
       }
-  </style>
     </style>
   </head>
   <body>
@@ -76,12 +74,18 @@
             <a class="nav-link text-light" href="about_us.html">About</a>
           </li>
           <li class="nav-item mx-auto my-1">
-            <a class="nav-link btn bg-primary text-white" role="button" href="login.html"
+            <a
+              class="nav-link btn bg-primary text-white"
+              role="button"
+              href="login.html"
               >sign in</a
             >
           </li>
           <li class="nav-item mx-auto my-1">
-            <a class="nav-link btn btn-warning text-white" role="button" href="logout.html"
+            <a
+              class="nav-link btn btn-warning text-white"
+              role="button"
+              href="logout.html"
               >log out</a
             >
           </li>
@@ -246,84 +250,9 @@
         </ul>
       </section>
     </section>
-    <script>
-      const foodSearchBtn = document.querySelector(".food-search-btn-js");
-      const foodSearchInput = document.querySelector(".food-search-input-js");
-      const foodsSection = document.querySelector(".foods-js");
 
-      foodSearchBtn.addEventListener("click", async () => {
-        //if the front end already got the results, do nothing
-        const nonDbAnswer = showSearchedValue();
-        if (nonDbAnswer) {
-          foodsSection.innerHTML = ""; //remove whats inside
-          return;
-        } else {
-          hideNonDb();
-        }
+    <script src="./fetch-js/searchBar.js"></script>
 
-        const countryName = foodSearchInput.value;
-        const lowerCase = countryName.toLowerCase();
-        const foodImages = await getFoodsImages(lowerCase);
-
-        if (foodImages) {
-          foodsSection.innerHTML = ""; //remove whats inside
-
-          foodsSection.appendChild(buildFoodsSection(countryName, foodImages));
-        } else {
-          alert(`There are no search results for ${countryName}`);
-        }
-      });
-
-      async function getFoodsImages(countryName) {
-        const result = await fetch(
-          `http://localhost:3000/country-info/${countryName}`
-        ); //FIX THIS
-
-        const country = await result.json();
-        if (country.food_images) {
-          const foodImages = country.food_images.split(",");
-          return foodImages;
-        } else {
-          return false;
-        }
-      }
-
-      function getImageFolderPath() {
-        const path = `../backend/uploads/images/additionalImages/`;
-        return path;
-      }
-
-      function buildFoodsSection(countryName, foodImages) {
-        let foodLis = "";
-        for (const imageName of foodImages) {
-          const li = `
-            <li class="row justify-content-center">
-              <div class="col-lg-6 my-2">
-                <p>Food_name</p>
-                <img
-                  src="${getImageFolderPath()}/${imageName}"
-                  alt="food"
-                  class="img-fluid rounded-5"
-                  width="200"
-                />
-                <p>Category: Foods</p>
-              </div>
-          </li>`;
-          foodLis += li;
-        }
-
-        const ulString = `
-          <ul>
-            <h2>${countryName}</h2>
-            <hr />
-            ${foodLis}
-          </ul>`;
-
-        const domParser = new DOMParser();
-        const ul = domParser.parseFromString(ulString, "text/html").body
-          .firstElementChild;
-        return ul;
-      }
-    </script>
+    <script src="./fetch-js/food-and-drinks.js"></script>
   </body>
 </html>

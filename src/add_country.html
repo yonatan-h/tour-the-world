@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
 
     <link
@@ -14,88 +14,104 @@
 
     <title>Document</title>
     <style>
-        body{
-            background-image: linear-gradient(to left top, rgb(6, 244, 208), rgb(4, 99, 188));
-        }
-        .country-input{
-            margin-top: 10%;
-        }
+      body {
+        background-image: linear-gradient(
+          to left top,
+          rgb(6, 244, 208),
+          rgb(4, 99, 188)
+        );
+      }
+      .country-input {
+        margin-top: 10%;
+      }
     </style>
-    
-</head>
-<body>
+  </head>
+  <body>
     <div class="country-input text-light">
-        <h1 class="text-center">Document Your Travels!</h1>
-        <form action="http://localhost:3000/country-info" method="post" enctype="multipart/form-data" class="container mt-5 ">
-            <div class="form-group row">
-            <label for="country" class="col-sm-2 col-form-label my-2">Country Name:</label>
-            <div class="col-sm-10">
-                <input type="text" id="country" name="country" class="form-control">
-            </div>
-            </div>
-            <div class="form-group row my-2">
-                <label for="profileImage" class="col-sm-2 col-form-label">Country Image:</label>
-                <div class="col-sm-10">
-                <input type="file" id="profileImage" name="images" class="form-control-file">
-                </div>
-            </div>
-            <div class="form-group row">
-            <label for="text" class="col-sm-2 col-form-label">Text:</label>
-            <div class="col-sm-10 my-3">
-                <textarea id="text" name="text" class="form-control" rows="5" maxlength="500" style="resize: none;"></textarea>
-            </div>
-            </div>
-            <div class="form-group row">
-                <label for="Image" class="col-sm-2 col-form-label">Additional country Image:
-                    <span class="text-danger">(Please Upload Exactly 3*)</span>
-                </label>
-                <div class="col-sm-10">
-                <input type="file" id="Image" name="images" multiple class="form-control-file" onchange="checkFileLimit(this, 3)">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="FoodImage" class="col-sm-2 col-form-label">Food and Drinks Image:
-                    <span class="text-danger">(Please Upload Exactly 3*)</span>
-                </label>
-                <div class="col-sm-10">
-                <input type="file" id="FoodImage" name="images" multiple class="form-control-file" onchange="checkFileLimit(this, 3)">
-                </div>
-            </div>
-            <div class="form-group row mx-auto w-25 my-5">
-            <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </form>
+      <h1 class="text-center">Document Your Travels!</h1>
+      <form
+        action="http://localhost:3000/country-info"
+        method="post"
+        enctype="multipart/form-data"
+        class="container mt-5"
+      >
+        <div class="form-group row">
+          <label for="country" class="col-sm-2 col-form-label my-2"
+            >Country Name:</label
+          >
+          <div class="col-sm-10">
+            <input
+              type="text"
+              id="country"
+              name="country"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <div class="form-group row my-2">
+          <label for="profileImage" class="col-sm-2 col-form-label"
+            >Country Image:</label
+          >
+          <div class="col-sm-10">
+            <input
+              type="file"
+              id="profileImage"
+              name="images"
+              class="form-control-file"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="text" class="col-sm-2 col-form-label">Text:</label>
+          <div class="col-sm-10 my-3">
+            <textarea
+              id="text"
+              name="text"
+              class="form-control"
+              rows="5"
+              maxlength="500"
+              style="resize: none"
+            ></textarea>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="Image" class="col-sm-2 col-form-label"
+            >Additional country Image:
+            <span class="text-danger">(Please Upload Exactly 3*)</span>
+          </label>
+          <div class="col-sm-10">
+            <input
+              type="file"
+              id="Image"
+              name="images"
+              multiple
+              class="form-control-file"
+              onchange="checkFileLimit(this, 3)"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="FoodImage" class="col-sm-2 col-form-label"
+            >Food and Drinks Image:
+            <span class="text-danger">(Please Upload Exactly 3*)</span>
+          </label>
+          <div class="col-sm-10">
+            <input
+              type="file"
+              id="FoodImage"
+              name="images"
+              multiple
+              class="form-control-file"
+              onchange="checkFileLimit(this, 3)"
+            />
+          </div>
+        </div>
+        <div class="form-group row mx-auto w-25 my-5">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
     </div>
-</body>
+  </body>
 
-<script>
-function checkFileLimit(input, limit) {
-    if (input.files.length > limit) {
-        alert(`You can only upload ${limit} files for this input`);
-        input.value = "";
-    }
-}
-document.querySelector("form").addEventListener("submit", function (event) {
-      event.preventDefault();
-      var formData = new FormData(event.target);
-
-      fetch("http://localhost:3000/country-info", {
-        method: "POST",
-        body: formData
-      })
-        .then(response => {
-          if (!response.ok) {
-            throw new Error("Request failed");
-          }
-          return response.json();
-        })
-        .then(data => {
-          window.location.href = "explore.html";
-        })
-        .catch(error => {
-          console.error(error);
-        });
-    });
-</script>
-
+  <script src="./fetch-js/add-country.js"></script>
 </html>

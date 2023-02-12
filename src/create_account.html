@@ -1,52 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Tour the World - Create Account</title>
-    <link rel="stylesheet" href="create_account.css">
+    <link rel="stylesheet" href="create_account.css" />
   </head>
   <body>
-    <form id = "createUserForm">
+    <form id="createUserForm">
       <h1>Create Account</h1>
       <label for="name">First Name:</label>
-      <input type="text" id="name" name="name" required>
+      <input type="text" id="name" name="name" required />
 
       <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+      <input type="email" id="email" name="email" required />
 
       <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
+      <input type="password" id="password" name="password" required />
 
-      <input type="submit" value="Sign Up">
+      <input type="submit" value="Sign Up" />
     </form>
-    <script>
-        const form = document.getElementById('createUserForm');
-        form.onsubmit = registerUser;
-
-        async function registerUser(event) {
-        event.preventDefault();
-
-        const formData = new FormData(form);
-        const toBeJson = {};
-        for (const keyValuePair of formData) {
-          const key = keyValuePair[0];
-          const value = keyValuePair[1];
-          toBeJson[key] = value;
-        }
-        const json = JSON.stringify(toBeJson);
-
-        console.log(json);
-
-        const result = await fetch("http://localhost:3000/users/create", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: json,
-        });
-
-        const data = await result.json();
-        console.log(data);
-        window.location = "login.html";
-      }
-    </script>
+    <script src="./fetch-js/create-account.js"></script>
   </body>
 </html>
