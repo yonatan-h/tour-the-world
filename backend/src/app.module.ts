@@ -18,9 +18,9 @@ import { CountryData } from './country_info/entity/CountryData.entity';
       type: 'mysql',
       host: '127.0.0.1',
       port: 3306,
-      username: 'root',
-      password: 'primequantuM4',
-      database: 'userdb',
+      username: 'root', //Change this
+      password: 'root', //Change this
+      database: 'userdb', //Should be an empty database
       entities: [Users, Comments, CountryData],
       synchronize: true,
     }),
