@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="http://localhost:3000/country-info" method="post" enctype="multipart/form-data">
+        <div>
+          <label for="country">Country Name:</label>
+          <input type="text" id="country" name="country">
+        </div>
+        <div>
+            <label for="profileImage"> Country Image: </label>
+            <input type="file" id="profileImage" name="images">
+        </div>
+        <div>
+          <label for="text">Text:</label>
+          <textarea id="text" name="text"></textarea>
+        </div>
+        <div>
+            <label for="Image"> Additional country Image: </label>
+            <input type="file" id="Image" name="images" multiple>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
