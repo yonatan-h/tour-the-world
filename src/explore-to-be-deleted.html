@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?Montserrat|Ubuntu"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <title>Explore</title>
+  </head>
+  <body>
+    <nav
+      class="navbar d-flex justify-content-center navbar-expand-lg navbar-dark bg-dark"
+    >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarToggledDiv"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarToggledDiv">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="explore.html">Explore</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="food_and_drinks.html">Food and Drinks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="accommodations.html">Accommodations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about_us.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link btn btn-primary"
+              role="button"
+              href="create_account.html"
+              >Home</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <h1>Explore!</h1>
+    <header class="text-center text-light">
+      <h1 class="header">Explore!</h1>
+    </header>
+    <div class="countries-js">
+      <div class="accordion-item w-75 py-2 mx-auto">
+        <h2 class="accordion-header" id="headingTwo">
+          <button
+            class="accordion-button bg-dark text-white rounded-4 p-2"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo"
+            aria-expanded="true"
+            aria-controls="collapseTwo"
+          >
+            <div class="d-flex justify-content-between w-100">
+              <p>Bali</p>
+              <img src="images/bali.jpg" width="60" alt="A temple of bali" />
+            </div>
+          </button>
+        </h2>
+        <section
+          id="collapseTwo"
+          class="accordion-collapse collapse show py-3 w-75 mx-auto"
+          aria-labelledby="headingTwo"
+          data-bs-parent="#dropdown"
+        >
+          <div class="accordion-body bg-info rounded-3 text-white text-center">
+            <p class="card__hidden-content__text">
+              If you want to get in touch with nature then bali is the right
+              choice! With beautiful sites to explore bali offers a wide range
+              of culture one will expect from indonesia.
+            </p>
+
+            <div class="py-3">
+              <img
+                class="w-25"
+                src="images/Uluwatu.jpg"
+                alt="A part of Uluwatu temple that is overlooking a lake"
+              />
+              <img
+                class="w-25"
+                src="images/ulun.jpg"
+                alt="A place called Pura ulun Danu Bratan in bali"
+              />
+              <img
+                class="w-25"
+                src="images/Nusaduabeach.jpg"
+                width="200"
+                alt="A drone shot photo of a beach in bali"
+              />
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <p class="text-center text-white">
+      Hear the vibrance of the world, ranging from musics to the sound of
+      nature, our best picks for you!
+    </p>
+    <section class="row w-100 mx-auto my-5">
+      <div class="col-lg-4 col-sm-12">
+        <audio class="w-100" src="audios/birds.mp3" controls></audio>
+      </div>
+      <div class="col-lg-4 col-sm-12">
+        <audio class="w-100" src="audios/rainforest.mp3" controls></audio>
+      </div>
+      <div class="col-lg-4 col-sm-12">
+        <audio class="w-100" src="audios/waves.mp3" controls></audio>
+      </div>
+    </section>
+
+    <script>
+      function amLoggedIn() {
+        return localStorage.getItem("jwt-token") !== null;
+      }
+
+      function getCurrentUserId() {
+        const userId = localStorage.getItem("user-id");
+        return +userId;
+      }
+
+      async function getUserName(userId) {
+        const result = await fetch(`http://localhost:3000/users/${userId}`);
+        const data = await result.json();
+        console.log(data);
+        const userName = data.name;
+        return userName;
+      }
+
+      async function loadComments() {
+        const countryDivs = [...document.querySelectorAll(".country-js")];
+        console.log(countryDivs);
+        for (const countryDiv of countryDivs) {
+          const commentsDiv = countryDiv.querySelector(".comments-js");
+          commentsDiv.innerHTML = ""; //reset
+
+          const countryId = countryDiv.getAttribute("id");
+          const plainComments = await getCountryComments(countryId);
+          console.log(plainComments);
+          const comments = await mapToNormalComments(plainComments);
+
+          for (const comment of comments) {
+            const isCurrentUser = comment.userId === getCurrentUserId();
+
+            let commentDiv;
+            if (isCurrentUser && amLoggedIn()) {
+              commentDiv = createCrudCommentDiv(comment, countryId);
+            } else {
+              commentDiv = createReadOnlyCommentDiv(comment);
+            }
+            commentsDiv.appendChild(commentDiv);
+          }
+          if (amLoggedIn()) {
+            const emptyCommentDiv = await createEmptyCommentDiv(countryId);
+            commentsDiv.appendChild(emptyCommentDiv);
+          } else {
+            const loginSuggestP = document.createElement("p");
+            loginSuggestP.textContent =
+              "login to write, edit, and delte your comments";
+            commentsDiv.appendChild(loginSuggestP);
+          }
+        }
+      }
+
+      async function mapToNormalComments(plainComments) {
+        const normalComments = [];
+        for (const plainComment of plainComments) {
+          const content = plainComment.content;
+          const userId = plainComment.userid;
+          const date = plainComment.date;
+
+          const userName = await getUserName(userId);
+
+          const normalComment = {
+            userName,
+            content,
+            date,
+            userId,
+          };
+          normalComments.push(normalComment);
+        }
+        return normalComments;
+      }
+
+      function createReadOnlyCommentDiv(comment) {
+        const { userName, userId, content, date } = comment;
+        const friendlyDate = new Date(date).toLocaleTimeString();
+
+        const divString = `
+          <div>
+              <p>${userName}: ${friendlyDate}</p>
+              <p>${comment.content}</p>
+          </div>
+          `;
+        const domParser = new DOMParser();
+        const div = domParser.parseFromString(divString, "text/html").body
+          .firstElementChild;
+
+        return div;
+      }
+
+      async function createEmptyCommentDiv(countryId) {
+        const myUserName = await getUserName(getCurrentUserId());
+        const divString = `<div>
+            <p>Write new comment</p>
+              <textarea class="post-text-area" cols="20" rows="3"></textarea>
+              <br/>
+             <button onclick="postComment(${countryId})">Send</button>
+          </div>`;
+        const domParser = new DOMParser();
+        const div = domParser.parseFromString(divString, "text/html").body
+          .firstElementChild;
+
+        return div;
+      }
+
+      function createCrudCommentDiv(comment, countryId) {
+        const { userName, userId, content, date } = comment;
+        const textareaId = countryId.toString() + userId.toString() + date;
+        const friendlyDate = new Date(date).toLocaleTimeString();
+
+        const divString = `
+          <div>
+              <p>${userName}: ${friendlyDate}</p>
+              <textarea id="${textareaId}" cols="20" rows="3">${content}</textarea>
+              <br/>
+                  <button onclick="updateComment('${countryId}', '${userId}', '${date}')" >Save Edited</button>
+                  <button onclick="deleteComment('${countryId}', '${userId}', '${date}')">Delete</button>
+          </div>
+          `;
+        const domParser = new DOMParser();
+        const div = domParser.parseFromString(divString, "text/html").body
+          .firstElementChild;
+
+        return div;
+      }
+
+      function alertEmptyComment() {
+        alert("Please write non empty comments!");
+      }
+
+      async function getCountryComments(countryId) {
+        const result = await fetch(
+          `http://localhost:3000/comments/${countryId}`
+        );
+        const data = await result.json();
+        return data;
+      }
+
+      //crud points
+      async function postComment(countryId) {
+        const countryDiv = document.getElementById(countryId);
+        const textarea = countryDiv.querySelector(".post-text-area");
+        const content = textarea.value;
+        if (!content) return alertEmptyComment();
+
+        const submittedComment = { content };
+        const myUserId = getCurrentUserId();
+        const authorizationHeader =
+          "Bearer " + localStorage.getItem("jwt-token");
+
+        await fetch(`http://localhost:3000/comments/${countryId}/${myUserId}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: authorizationHeader,
+          },
+          body: JSON.stringify(submittedComment),
+        });
+        loadComments();
+      }
+
+      async function updateComment(countryId, myUserId, date) {
+        const textareaId = countryId + myUserId + date;
+        const content = document.getElementById(textareaId).value;
+        if (!content) return alertEmptyComment();
+
+        const submittedComment = { content };
+        const authorizationHeader =
+          "Bearer " + localStorage.getItem("jwt-token");
+        await fetch(
+          `http://localhost:3000/comments/${countryId}/${myUserId}/${date}`,
+          {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: authorizationHeader,
+            },
+
+            body: JSON.stringify(submittedComment),
+          }
+        );
+        loadComments();
+      }
+
+      async function deleteComment(countryId, myUserId, date) {
+        const authorizationHeader =
+          "Bearer " + localStorage.getItem("jwt-token");
+        await fetch(
+          `http://localhost:3000/comments/${countryId}/${myUserId}/${date}`,
+          {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: authorizationHeader,
+            },
+          }
+        );
+
+        loadComments();
+      }
+    </script>
+
+    <script>
+      loadCountries();
+
+      function amLoggedIn() {
+        return localStorage.getItem("jwt-token") !== null;
+      }
+
+      async function getCountries() {
+        const getCountriesUrl = "http://localhost:3000/country-info"; //FIX THIS -------------
+        const result = await fetch(getCountriesUrl);
+        const data = result.json();
+        return data;
+      }
+
+      async function loadCountries() {
+        const countriesContainer = document.querySelector(".countries-js");
+        countriesContainer.innerHTML = ""; //reset
+        const countries = await getCountries();
+        console.log(countries);
+
+        for (const country of countries) {
+          const countryId = country.id; //FIX THIS -------------
+          const title = country.country; //FIX THIS -------------
+          const description = country.text; //FIX THIS -------------
+          const mainImage = country.profilefilename; //FIX THIS ------
+          const images = country.additional_pics; //FIX THIS -------------
+
+          let countryCard;
+          if (amLoggedIn()) {
+            countryCard = crudCountryCard(
+              countryId,
+              title,
+              description,
+              mainImage,
+              images
+            );
+          } else {
+            countryCard = readOnlyCountryCard(
+              countryId,
+              title,
+              description,
+              mainImage,
+              images
+            );
+          }
+          countriesContainer.appendChild(countryCard);
+        }
+
+        console.log("here");
+        await loadComments();
+      }
+
+      function getImageFolderPath() {
+        const path = `../backend/uploads/images/additionalImages/`;
+        return path;
+      }
+
+      function crudCountryCard(
+        countryId,
+        title,
+        description,
+        mainImage,
+        images
+      ) {
+        //FIX IMAGE SOURCE
+
+        let imageElements = "";
+        for (const imageName of [mainImage, ...images]) {
+          const imageElement = `<img
+                class="w-25"
+                src="${getImageFolderPath()}/${imageName}"
+                alt="a picture of ${title}"
+              />`;
+          imageElements += imageElement;
+        }
+
+        const textAreaId = `${countryId}-country-edit-js`;
+
+        const divString = `
+        <div class="accordion-item w-75 py-2 mx-auto country-js" id="${countryId}">
+        <h2 class="accordion-header" id="headingTwo">
+          <button
+            class="accordion-button bg-dark text-white rounded-4 p-2"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse-${countryId}"
+            aria-expanded="true"
+            aria-controls="collapseTwo"
+          >
+            <div class="d-flex justify-content-between w-100">
+              <p>${title}</p>
+              <img src="${getImageFolderPath()}/${mainImage}" width="60" alt="A temple of bali" />
+            </div>
+          </button>
+        </h2>
+        <section
+          id="collapse-${countryId}"
+          class="accordion-collapse collapse show py-3 w-75 mx-auto"
+          aria-labelledby="headingTwo"
+          data-bs-parent="#dropdown"
+        >
+          <div class="accordion-body bg-info rounded-3 text-white text-center">
+
+
+            <textarea class="card__hidden-content__text" id="${textAreaId}">
+              ${description}
+            </textarea>
+
+            
+            <div>
+              <button onclick="updateCountry('${countryId}', '${textAreaId}')" >Save</button>
+              <button onclick="deleteCountry('${countryId}')">Delete</button>
+            </div>
+            <div class="py-3">
+              ${imageElements}
+            </div>
+            <div class="comments-js">
+                <!-- comment -->
+            </div>
+          </div>
+          
+          
+        </section>
+
+      </div>
+        `;
+        const domParser = new DOMParser();
+        const div = domParser.parseFromString(divString, "text/html").body
+          .firstElementChild;
+
+        return div;
+      }
+
+      function readOnlyCountryCard(
+        countryId,
+        title,
+        description,
+        mainImage,
+        images
+      ) {
+        let imageElements = "";
+        for (const imageName of [mainImage, ...images]) {
+          const imageElement = `<img
+                class="w-25"
+                src="${getImageFolderPath()}/${imageName}"
+
+                alt="a picture of ${title}"
+              />`;
+          imageElements += imageElement;
+        }
+
+        const divString = `
+        <div class="accordion-item w-75 py-2 mx-auto country-js" id="${countryId}">
+        <h2 class="accordion-header" id="headingTwo">
+          <button
+            class="accordion-button bg-dark text-white rounded-4 p-2"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse-${countryId}"
+            aria-expanded="true"
+            aria-controls="collapseTwo"
+          >
+            <div class="d-flex justify-content-between w-100">
+              <p>${title}</p>
+              <img src="${getImageFolderPath()}/${mainImage}" width="60" alt="A temple of bali" />
+            </div>
+          </button>
+        </h2>
+        <section
+          id="collapse-${countryId}"
+          class="accordion-collapse collapse show py-3 w-75 mx-auto"
+          aria-labelledby="headingTwo"
+          data-bs-parent="#dropdown"
+        >
+          <div class="accordion-body bg-info rounded-3 text-white text-center">
+
+
+            <p class="card__hidden-content__text">
+              ${description}
+            </p>
+
+            <div class="py-3">
+              ${imageElements}
+            </div>
+            <div class="comments-js">
+                <!-- comment -->
+            </div>
+          </div>
+          
+          
+        </section>
+
+      </div>
+        `;
+
+        const domParser = new DOMParser();
+        const div = domParser.parseFromString(divString, "text/html").body
+          .firstElementChild;
+
+        return div;
+      }
+
+      function alertEmptyCountry() {
+        alert("Please write non empty country cards!");
+      }
+
+      //crud points
+      async function updateCountry(countryId, textAreaId) {
+        console.log(textAreaId);
+        const description = document.getElementById(textAreaId).value;
+        if (!description) return alertEmptyCountry();
+
+        const body = JSON.stringify({ text: description });
+        const jwtToken = localStorage.getItem("jwt-token");
+        const authorizationHeader = "Bearer " + jwtToken;
+
+        const result = await fetch(
+          `http://localhost:3000/country-info/${countryId}`, //FIX THIS
+          {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: authorizationHeader,
+            },
+
+            body: body,
+          }
+        );
+        console.log(result);
+        await loadCountries();
+      }
+
+      async function deleteCountry(countryId) {
+        const jwtToken = localStorage.getItem("jwt-token");
+        const authorizationHeader = "Bearer " + jwtToken;
+
+        await fetch(`http://localhost:3000/country-info/${countryId}`, {
+          //FIX THIS ----------------
+          method: "DELETE",
+          headers: {
+            Authorization: authorizationHeader,
+          },
+        });
+
+        await loadCountries();
+      }
+    </script>
+  </body>
+</html>
